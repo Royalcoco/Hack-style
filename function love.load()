@@ -1,0 +1,44 @@
+function love.load()
+    -- Dimensions de la fenêtre
+    windowWidth = 400
+    windowHeight = 400
+ 
+    -- Position initiale du pixel
+    pixelX = windowWidth / 2
+    pixelY = windowHeight / 2
+ 
+    -- Composantes de couleur initiales
+    red = 0
+    green = 0
+    blue = 0
+    alpha = 255
+ 
+    -- Variables pour le déplacement des couleurs
+    redDelta = 1
+    greenDelta = 2
+    blueDelta = 3
+    alphaDelta = 1
+ end
+ 
+ function love.update(dt)
+    -- Mise à jour des composantes de couleur
+    red = (red + redDelta) % 256
+    green = (green + greenDelta) % 256
+    blue = (blue + blueDelta) % 256
+    alpha = (alpha + alphaDelta) % 256
+ 
+    -- Déplacement du pixel
+    pixelX = pixelX + 1
+ 
+    -- Rebond du pixel à l'extrémité droite de la fenêtre
+    if pixelX > windowWidth then
+       pixelX = 0
+    end
+ end
+ 
+ function love.draw()
+    -- Dessin du pixel avec les composantes de couleur actuelles
+    love.graphics.setColor(red, green, blue, alpha)
+    love.graphics.rectangle("fill", pixelX, pixelY, 1, 1)
+ end
+ 
