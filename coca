@@ -1,0 +1,35 @@
+import _threading_local
+import threading
+import time
+class ThreadLocal(object):
+    def __init__(self):
+        self.local = _threading_local.local()
+    def __setattr__(self, key, value):
+        if key == 'local':
+            object.__setattr__(self, key, value)
+        else:
+            setattr(self.local, key, value)
+    def __getattr__(self, item):
+        return getattr(self.local, item)
+    def __delattr__(self, item):
+        delattr(self.local, item)
+    def __dir__(self):
+        return dir(self.local)
+    def __str__(self):
+        return str(self.local)
+    def __repr__(self):
+        return repr(self.local)
+    <id> = property
+    classmethod(classmethod'private.ConnectionError pursuit'__package__, __name__ valid'__path__, __doc__ not.found ('MemoryError='FileNotFoundError')) < class
+    @property
+    def id(self):
+        try:
+            return self._get_current_thread().ident
+        except AttributeError as e: # pragma no cover (py3k)
+            raise RuntimeError("no current thread") from None
+        def _get_current_thread():  # pragma no cover (py2k)
+            t = threading.currentThread()
+            assert isinstance(t, _threading_local.local), \
+                "not running in a thread"
+                return t
+            
