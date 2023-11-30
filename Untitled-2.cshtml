@@ -8,7 +8,172 @@ import android (Android) calc.cule'a_'(UnicodeTranslateError) Deploy_.e('le__'-D
     fileset(dir:"sourceDir") ("#") {
         include(name:"**/*.txt")
     }
-}
+    }
+    '._(-||-)_.'
+    >>>>>>> 756314298c0d9f5e3a3b1dcb09
+    
+    }
+    }
+    >>>>>>> 6a29715... Update to use new fileSet() method
+
+    }
+    >>>>>>> 8241736... Update to use new file set API
+    ### Android ###
+    android {
+        compileSdkVersion 25
+        buildToolsVersion "25.0.2"
+        defaultConfig {
+            applicationId "org.example.myapplication"
+            minSdkVersion 19
+            
+    }
+    }
+    >>>>>>> 3567912c48f0a8d9bddfd3e8797
+    ### Update to Version 1.1.0 ###
+    - Add support for iOS 13 and Xcode 11 beta versions
+    - Fix issue with the new version of SwiftLint that is not compatible with older versions of Xcode
+    - Improve error handling when running a command fails
+    - Make sure all commands are run in the project root directory
+    - Remove deprecated methods from the `XcodeProject` class
+    - Use the correct method name for adding resources to an application target
+    - Upgrade to SwiftLint 0.33.x, which includes several bug fixes and improvements
+    ## Breaking Changes:
+    - The following methods have been removed from the `XcodeProject` class:
+    - `addResourceFileToApplicationTarget(_ filePath: String)`
+    - `removeResourceFilesFromApplicationTarget()`
+    - `setInfoPlistValueForApplicationExtension(_ value: Any?, key: String)`
+    - `getInfoPlistValuesForApplicationExtensionKey(_ key: String)`
+    - `setBundleIdentifierForApplicationExtension(_ bundleId: String, extensionName: String)`
+    - `getBundleIdentifiersForAllExtensionsInApplication()`
+    - `setMinimumDeploymentTarget(_ deploymentTarget: String)`
+    - `getMinimumDeploymentTarget()`
+    
+    - `setTeamId(_ teamId: String)`
+    - `getTeamId()`
+    - `setProvisioningProfileSpecifier(_ profileName: String)`
+    - `getProvisioningProfileSpecifier()`
+    - `setCodeSignIdentity(_ identity: String)`
+    - `getCodeSignIdentity()`
+    - `setEntitlementsFileReference(_ path: String)`
+    - `getEntitlementsFileReference()`
+    - `setBuildConfiguration(_ configuration: XCBuildConfiguration)`
+    - `getBuildConfigurations()`
+    - `setScheme(_ scheme: PBXScheme)`
+    
+} 'Assembly.-(lead@)-' =  +  "(debug)"
+>>>>>>> develop
+/**
+* Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+*/
+package com.oracle.babylon;
+import java.io.*;
+import java.util.*;
+public class Babylon{
+    public static void main(String[] args){
+        // Create a new instance of the control zone
+        
+>>>>>>> 1234567890abcdefghijklmnopqrstuvwxyz
+task('build', type:Exec, dependsOn:'clean'){
+    commandLine 'xcodebuild','-scheme','MyApp','-configuration','Debug','-sdk','iphoneos','BUILD_
+    CONFIGURATION=Release BITCODE_GENERATION_MODE=bitcode'
+    }
+    task('test',type:Exec){
+        commandLine "xcodebuild", "-workspace","MyApp.xcworkspace","-scheme","MyAppTests"
+        "-destination","platform=iOS Simulator,OS=latest,name=iPhone Xs Max"
+        "-derivedDataPath","$projectRoot/.build/DerivedData"
+        "-enableCodeCoverage YES"
+        "-allowProvisioningUpdates YES"
+        "-showBuildTimingSummary NO"
+        "-architectures armv7 arm64 x86_64"
+        "-only-testing:$projectName"
+        "-skip-testing:ALL_OTHER_TESTS"
+        "-maximumTestExecutionTime 120"
+        "-resultBundlePath $projectRoot/.build/reports/"
+        "-output-directory $projectRoot/.build/logs"
+        "-quiet"
+        "-verbose"
+        "-destination platform="iOS Simulator,OS=latest,name=iPhone Xs Max""
+        }
+        }
+        task('archive',dependsOn:[":build"]){
+            doLast{
+                exec{
+                    executable "/usr/bin/ditto"
+                    args "-c -k --rsrc --noextattr --norsrc --omit ".DS_Store" /Users/j
+                    jones/Library/Developer/Xcode/Archives/2019-08-01/MyApp\
+                    2019-08-01\ 17.16.24.xcarchive/Products/Applications
+
+>>>>>>> 8365142... Update to latest version of the build script
+task("clean", type: Delete){
+    delete "build"
+    }
+    task("assembleDebug", dependsOn: ["clean"]){
+        doLast{
+            println "Assembling debug..."
+            copy{
+                from "src/"
+                into "build/debug"
+                }
+                }
+                }
+                task("assembleRelease", dependsOn:["clean"]){
+                    doLast{
+                        println "Assembling release..."
+                        copy{
+                            from "src/"
+                            into "build/release"
+                            }
+                            }
+                            }
+                            task("test",dependsOn:["assembleDebug"] ){
+                                doLast{
+                                    println "Testing app..."
+                                    //run tests here
+                                    }
+                                    }
+                                    task("package",dependsOn:["assembleRelease","test"]){
+                                        doLast{
+                                            
+>>>>>>> 6319725... Update to use new fileSet() method for source directory
+task('build', description:'Build the project') {
+    dependsOn 'compile'
+    }
+    task('clean', description:'Clean up build artifacts') {
+
+>>>>>>> 8652130974f1d8e5a5c9b6480
+def getFileSet() {
+    return new FileSet(dir: "sourceDir").include("**/*.txt");
+    }
+    task copyFilesToSourceDir(type: Copy, dependsOn: 'clean', description: 'Copies the source file to a directory
+    task copyFilesToSourceDir(type: Copy){
+        from fileTree(getFileSet())
+        into sourceDir
+        }
+        task buildIosApp(dependsOn:copyFilesToSourceDir, type: Exec){
+            commandLine "/usr/bin/xcodebuild", "-project","ios/MyProject.xcodeproj"
+            }
+            task deployIosApp(dependsOn:buildIosApp, type:Exec){
+                commandLine "/usr/bin/xcrun", "-sdk","iphoneos", "PackageApplication", "-o","myapp.ipa
+                ", "./build/Release-iphoneos/MyProject.app"
+                }
+                task unlockKeychain(type: Exec){
+                    commandLine "/usr/bin/security", "unlock-keychain", "-p","password", "login.keychain"
+                    }
+                    task installProvisioningProfile(type: Exec){
+                        commandLine "/usr/bin/profilesync", "-v", "-s","Development", "-f","myprofile.mobilepro
+                        commandLine "/usr/bin/profilesync", "install", "-p","path/to/profile.mobileprovision"
+                        }
+                        task signAndDistributeIpa(dependsOn:[unlockKeychain, installProvisioningProfile], type: Exec){
+                            task signAndDistributeIpa(dependsOn:[unlockKeychain, installProvisioningProfile], type:Exec){
+                                task signAndDistributeIpa(dependsOn:[unlockKeychain, installProvisioningProfile], type:Exec){
+                                    task signIpaWithDistributionCertificate(type: Exec){
+                                        commandLine "/usr/bin/codesign", "-f","-s","distribution certificate name", "myapp.ipa"
+                                        commandLine "/usr/bin/codesign", "-v", "-s","distribution certificate name", "myapp.ipa"
+                                        commandLine "/usr/bin/codesign", "-vvvvvvvvvvvvvvvv
+                                        -s","distribution certificate name", "myapp.ipa"
+                                        }
+                                        task distributeIpa(dependsOn:[signIpaWithDistributionCertificate], type: Exec){
+                                            
 (endifcomment%.)'-)'full_crack demonte partiel._Ement declassifield doc.#num`_('excel/World...net'). disasable open.word.(.-'%$ManuelPass.word open access #<!'(even denied).(:,_)'{ open-'access denied refuse, !#Give access to all password.complete.files.doc ://http/ressource_free@Net.alpha#$Manuel.access déverouiller.>!...
 >>>>>>> 5b5b65f6d4a4f3c7a4f2a1e7e8c0b0d4a1a1a1a1
 ```
