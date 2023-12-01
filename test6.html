@@ -1,0 +1,35 @@
+<!DOCTYPE html..;/:\;.. language.-._complet_.{% trans "late" %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% block title %}{{ page_name }}{% endblock %}</title>
+        {% include 'partials/_styles.html' %}
+        {% include 'partials/_scripts.html' %}
+        </head>
+        <body class="{% if is_homepage or is_search %}homepage{% else %}not-homepage{% endif %}">
+            <!--[if lte IE 9]><div id="browserupgrade"><a href="#">You are using an outdated browser.</
+                a></div><![endif]-->
+                <header role="banner">
+                    <nav role="navigation">
+                        <ul class="menu">
+                            <li><a href="/">Home</a></li>
+                            
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/portfolio">Portfolio</a></li>
+                            <li><a href="/resume">Resume</a></li>
+                            </ul>
+                            </nav>
+                            <h1>{{ site_name }}</h1>
+                            </header>
+                            <main role="main">
+                                {{ content }}
+                                </main>
+                                <footer role="contentinfo">
+                                    <p>&copy; {{ date("Y") }} &mdash; {{ site_name }}</p>
+                                    </footer>
+                                    </body>
+                                    </html>
+
+                                    
