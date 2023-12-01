@@ -35,3 +35,130 @@ tm1-dimension="shape (shape)"
 </address>
     
     </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="price (price)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="quantity (quantity)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="total price (total price)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="total quantity (total quantity)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="discount (discount)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="tax rate (tax rate)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="shipping cost (shipping cost)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="sub total (sub total)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="total discount (total discount)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="total tax (total tax)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    <tm1-ui-rpt-row
+    tm1-dimension="gross profit (gross profit)"
+    >
+    "{{localVariable}}"
+    </tm1-ui-rpt-row>
+    </div>
+    </template>
+    `;
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+
+    "Variation.memo'([input_.clo{% static "//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.
+    " %}]"
+    )
+    .then(function(data) {
+        console.log("success");
+        var result = data[0];
+        if (result == null || result === undefined){
+            return false;
+            } else{
+                //console.log(result);
+                let html = '';
+                for (let i=0, len=result.length; i<len; i++) {
+                    const rowData = result[i];
+                    //html += `<tr><td>${rowData}</td></tr>`;
+                    html += `<tr class="table-primary"><th scope="row">${rowData}</th></tr>`;
+                    };
+                    document.getElementById('variations').innerHTML = html;
+                    $('#exampleModalCenter').modal({show:true});
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#variations tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                            });
+                            }
+                            })
+                            .catch((error)=>{
+                                console.log(error);
+                                });
+                                }
+                                </script>
+                                <div id="variations"></div>
+                                <br/>
+                                <button type="submit" name="add_product" class="btn btn-info" onclick="getProductDetails()" style="float
+                                <button type="submit" name="add_product" class="btn btn-info" onclick="getProductDetails()" style="width
+                                <button type="submit" onclick="get_var()" class="btn btn-outline-dark">Get Variations</button>
+                                <button type="submit" name="add_product" class="btn btn-info">Add Product</button>
+                                <button type="submit" onclick="get_variations()" class="btn btn-outline-info">Get Variations</button
