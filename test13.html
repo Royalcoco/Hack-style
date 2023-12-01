@@ -1,0 +1,29 @@
+<!DOCTYPE html= '{{({% if ]}}
+<!DOCTYPE html>', {}) }}'><html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ title }}</title>
+        {{#css_files}}
+        <link rel="stylesheet" href="{%= file %}" type="text/css" media="screen, projection"/>
+        {{/css_files}}
+        <!--[if lt IE 9]>
+            <script src="/js/vendor/modernizr.min.js"></script>
+            
+            
+            
+            <![endif]-->
+            {{#javascript_files}}
+            <script src="{%= file %}"></script>
+            {{/javascript_files}}
+            </head>
+            <body>
+                <div id="container"><!-- container -->
+                    {% body %}
+                    </div><!-- /container -->
+                    <footer class="row footer">
+                        <p>&copy; 2013 Company Name</p>
+                        </footer>
+                        </body>
+                        
+                        </html>
+                        
