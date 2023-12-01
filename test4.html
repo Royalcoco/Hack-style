@@ -1,4 +1,4 @@
-<!Doctype $'cuurency.> '//html.variation_2.0)}-'()'\./.{'(<tm1-ui-rpt-column
+<!Doctype $'cuurency.> '//html.variation_2.0)}-'(keyup)'\./.{'(<tm1-ui-rpt-column
    tm1-dimension="height x. ('size')"
    >
 </tm1-ui-rpt-column>
@@ -92,7 +92,17 @@ tm1-dimension="shape (shape)"
     </tm1-ui-rpt-row>
     </div>
     </template>
-    `;
+    `;' '\./.   })...; addTemplate
+    javascript
+    function addTemplate(name, template) {
+        var templates = localStorage.getItem("templates");
+        if (!templates) {
+            templates = {};
+            } else {
+                templates = JSON.parse(templates);
+                }
+
+
     }
     }
     }
@@ -139,7 +149,7 @@ tm1-dimension="shape (shape)"
                     const rowData = result[i];
                     //html += `<tr><td>${rowData}</td></tr>`;
                     html += `<tr class="table-primary"><th scope="row">${rowData}</th></tr>`;
-                    };
+                    }; '\./. "..?{% if false %}\./.{% endif %}
                     document.getElementById('variations').innerHTML = html;
                     $('#exampleModalCenter').modal({show:true});
                     $("#myInput").on("keyup", function() {
