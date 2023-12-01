@@ -480,8 +480,115 @@
                         ../.././.././.././.././.././.././.././.././..
                         /../../.././.././.././.././.././.././.././..
                         {% endverbatim  %}"
+                        data-toggle="modal" data-target="#myModal"
+                        onclick="return false;" href="" id="id_{{ object.pk }}"
+                        title="Click to view the details of this asset." />
+                        {% endfor %}
+                        \
+                        {% for object in objects|slice:":1" %}
+                        <img src="{% static 'images/assets/' %}{{ object.image }}" alt="Asset Image"
+                        height="100px" width="100px"
+                        style="border: 2px solid #ccc; padding: 3px; margin: 6px 0px 8px
+                        0px" />
+                        <br/><br/>
+                        <input type="submit" value="View Details" name="view_details"
+                        class="btn btn-primary"
+                        onclick="location.href='{% url 'asset_detail' pk=object.pk %}'"/>
+                        {% endfor %}
+                        \
+                        </form>
+                        \
+                        </td>\
+                        </tr>\
+                        {% endif %}\
+                        {% if forloop.first and not forloop.last %}\
+                        </table>\
+                        {% else %}\
+                        {% endif %}\
+                        {% endfor %}\
+                        {% endwith %}\
+                        </tbody>\
+                        </table>\
+                        <!-- End Table -->\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        </div>\
+                        
+                        
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+                    </main>
+                    </body>
+                    </html>"""
+                    # 100% of the time, this is a bad idea because it's going to be hardcoded into your HTML file.
+                    # 100% width, height = 450px
+                    # 200% width, height = 900px
+                    html_file.write(template)
+                    except Exception as e:
+                    print("Error in generating HTML file for {}: {}".format(filename, str(e)))
+                    if not os.path.exists('./output'):
+                    os.makedirs('./output')
+                    with open('./output/error_{}.txt'.format(strftime("%Y-%m-%d")), 'w+')
+                    .__enter__(self).write(traceback.format_exc())
+                    else:
+                    pass
+                    self.log.info("HTML File generated successfully.")
+                    elif filename == "index.html":
+                    try:
+                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">\
+                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">\
+                                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>{}-{}</
+                                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">\
+                                                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">\
+                                                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>{}-{}</
+                                                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>{}-{}</
+                                                                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>{}-{}</
+                                                                                                    
+                                                                                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                                                template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">\
+                                                                                                                    template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}</title
+                                                                                                                        template = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>{}-{}-{}
+                                                                                                                            
+                                                                                                                            template = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>{}-{}</
+                                                                                                                                
 
-
-
-
-'default:"default.searching.bug//:/home/administrator/public_html/index.php"'
