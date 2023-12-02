@@ -1,0 +1,56 @@
+<!DOCTYPE html.'_|.|..)(competence)'<tm1-ui-web
+   tm1-instance="Pri(.n)ce"
+   tm1-server="http://localhost:8000/api">
+   <div class="container">
+    <h2>Competences</h2>
+    <table id="myTable" class="tablesorter table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Date de creation</th>
+                <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for competence in competences %}
+                    <tr>
+                        <td>{{ competence.id }}</td>
+                        <td>{{ competence.nom }}</td>
+                        <td>{{ competence.description }}</td>
+                        <td>{{ competence.dateCreation | date("d M Y")}}</td>
+                        <td><a href="#editModal" data-toggle="modal"><i class="fa fa-pencil"></i></a>&
+                            
+                            <a href="#deleteModal" data-toggle="modal"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            </table>
+                            <!-- Modal -->
+                            <div id="addModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <form action="/administration/ajouterCompetence/" method="post">
+                                            {{ csrf_field() }}
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Ajout d'une compétence</h4>
+                                                </div>
