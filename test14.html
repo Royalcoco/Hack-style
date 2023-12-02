@@ -1,0 +1,115 @@
+<!DOCTYPE html.'    ('={{{% if changed %} ).}}
+<html lang="en">'
+    <head>
+        <meta charset="utf-8" />
+        <title>{%=o.pageTitle %}</title>'
+        {% include 'partials/metadata.tpl' %}
+        {{ assets.css('main') }}
+        {{ assets.js('vendor/modernizr') }}
+        <!--[if lte IE 9]><script src="{%=o.urlBasePath %}/assets/javascripts/vendor/respond
+            .min.js"></script><![endif]-->
+            </head>
+            <body class="{%=o.bodyClass %}">
+                <div id="fb-root"></div>
+                {# Facebook #}
+                <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/all.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+                    {# Twitter #}
+                    <a href="https://twitter.com/{%=o.authorTwitterHandle}" class="twitter-follow-button" data-
+                    <a href="https://twitter.com/{%=o.authorTwitterHandle}" class="twitter-follow-button" data-
+                    <a href="https://twitter.com/{%=o.authorTwitter}" class="twitter-follow-button" data-show
+                    count="vertical" data-size="large">Follow @{%=o.authorTwitter}%}</a>
+                    <script type="text/javascript">! function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?
+                        'http':'https'; if (!d.getElementById(id)) { js=d.createElement(s);
+                            js.id=id; js.src=p+"://platform.twitter.com/widgets.js";fjs.parent
+                            .appendChild(js);}}(document,"script","twitter-wjs");</script>
+                            {# Google+ #}
+                            <g:plusone></g:plusone>
+                            <script type="IN/Share" data-href="{%=o.urlBasePath %}"></script>
+                            {# Disqus Comments #}
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE *
+                                
+                                */
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.commentsShortName %}'; // required: replace example with your forum shortname
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName %}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName%}'; // required: replace example with your forum
+                                var disqus_shortname = '{%=o.disqusShortName%}'; // required: replace example with your forum
+                                var disqus_shortname = '{%=o.disqusShortName%}'; // required: replace example with your forum
+                                var disqus_shortname = '{%=o.disqusShortName%}'; // required: replace example with your forum
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.commentsShortName}'; // required: replace example with your forum shortname
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.commentsShortName %}' // required: replace example with your forum shortname
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.commentsShortName%}'; // required: replace example with your forum shortname
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName}'; // required: replace example with your forum short
+                                var disqus_shortname = '{%=o.disqusShortName%}'; // required: replace example with your forum
+                                // REQUIRED CONFIGURATION VARIABLE: SITE NAME HOSTING THE COMMENTS
+                                var disqus_shortname = '{%=o.commentsDisqusShortName %}';
+                                // OPTIONAL CONFIGURATION VARIABLES: CHANGE FOR DIFFERENT COLORS OR F
+                                var disqus_identifier = "{%=filepath%}";
+                                var disqus_title = "{%=docTitle%}";
+                                var disqus_url = "{%=o.urlBasePath %}{%=filepath%}";
+                                (function() {
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            </script>
+            </body>
+    </head>
