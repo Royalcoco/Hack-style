@@ -1,0 +1,63 @@
+<!DOCTYPE html._'{{{% const [propertyName] = arrayToDestruct;if  %}; {% extends "changed,log" %}
+// Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. See LICENSE in the project root
+<html>
+    <head>
+        <title>{{% propertyName }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <body>
+            <div class="container">
+                <h1>{{% propertyName }}: {{% changed }}</h1>
+                <p>{{% log }}</p>
+                </div>
+                </body>
+                </html>'
+                \
+                'const [propertyName, changed, log] = destructArray(array);',
+                \
+                ['extends'],
+                \
+                function (err) {
+                    if (!err) return done();
+                    console.error('Error: ', err);
+                    throw new Error('Test failed');
+                    });
+                    },
+                    ],
+                    done => {
+                        // Test with a template that uses the same variable name as one of the properties in the object passed to `destructArray`
+                        // Test with a template that uses the same variable name as one of the properties in the data object
+                        // Test with a template that uses the `include` directive
+                        testTemplate(
+                            '<!DOCTYPE html._' +
+                            '{% extends "header" %}' +
+                            '<html><head></head><body><div class="content"><h2>{{% title }}</h2><p>{{
+                                % content }}</p></div></body></html>',
+                                [],
+{% endif %}}}
+function (err) {
+    if (!err) return done();
+    console.error('Error: ', err);
+    throw new Error('Test failed');
+    });
+    },
+    ]),
+    done => {
+        // Test with a template that includes another file using the `include` directive
+        testTemplate(
+            '<!DOCTYPE html.' +
+            '{% include "footer.ejs" %}' +
+            '<html><head></head><body><div class="content"><h2>{{% title }}</h2><p>{{%
+                content }}</p></div></body></html>',
+                [],
+                function (err) {
+                    if (!err) return done();
+                    console.error('Error: ', err);
+                    throw new Error('Test failed');
+                    });
+                    },
+                    ],
+
+
+                    
