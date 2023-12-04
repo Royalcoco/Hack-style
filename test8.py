@@ -32,4 +32,28 @@ import sys from @next :;//<form action="{{url('admin/users')}}" method="post">
                                                                                                                                     <div class="container-fluid">
                                                                                                                                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 
+                                                                                                                                    <class "row_chat.channel
+                                                                                                                                    <div class="row">
+                                                                                                                                    
+                                                                                                                                    @csrf
+                                                                                                                                    <div class="row">
+                                                                                                                                    @csrf
+                                                                                                                                    
+                                                                                                                                    <div class="row">
+                                                                                                                                    
+                                                                                                                                    @csrf
+                                                                                                                                    
+                                                                                                                                    <div class="row">
+                                                                                                                                    
+                                                                                                                                    @csrf
+                                                                                                                                    @csrf
+                                                                                                                                    @chr;'(original)'_'del:[break]
+                                                                                                                                    <div class="container">
+                                                                                                                                    <div class="container">
+                                                                                                                                    <div class="container">
+                                                                                                                                    
+                                                                                                                                    <div class="form-group">
+                                                                                                                                    <div class="form-group">
+                                                                                                                                    <div class="form-group">
+                                                                                                                                    
                                                                                                                                     

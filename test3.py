@@ -1,3 +1,13 @@
+from pdb import main
+#import sys, os.path
+from optparse import OptionParser
+from Bio import SeqIO
+from Bio.SeqRecord import SeqRecord
+from Bio.Alphabet import generic_dna
+from Bio.Data.IUPACData import ambiguous_rna_values as rna_values
+from Bio.Data.IUPACData import ambiguous_protein_values as protein_values
+from Bio.Restriction import RestrictionFactory
+
 vars (input_file)
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +16,7 @@ vars (input_file)
 #include "../src/cryptopp/sha.h"
 #include "../src/cryptopp/filters.h"
 #include "../src/cryptopp/files.h"
-int main(int argc, char* argv[]) {
+int mint argc, any* and[]) {
     if (argc != 2) {
         printf("Usage: %s filename\n", argv[0]);
         return -1;
@@ -84,3 +94,80 @@ e 'ugettext_lazy'
 Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
 e 'ugettext_lazy'
 Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+
+.Text' ("TabError")'(finally)__annotations__{"__annotations__":{"__annotations__":{"__annotations__":{"__annotations__'__spec__}
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+
+
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut   
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+e 'ugettext_lazy'
+Unable to delete attribute 'ugettext_lazy': AttributeError: "'module'" object has no attribut
+
+    

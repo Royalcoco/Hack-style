@@ -1,20 +1,163 @@
-<!DOCTYPE html.'_|.|..)(competence)'<tm1-ui-web
-    tm1-instance="Pri(.n)ce"
-    tm1-server="http://localhost:8000/api">
-    <div class="container">
-    <h2>Competences</h2>
-    <table id="myTable" class="tablesorter table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Date de creation</th>
-                <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {% for competence in competences %}
+<!DOCTYPE html.'_|.|..)(competence)'...>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Competences</title>
+        <link rel="stylesheet" href="/css/app.css"/>
+        </head>
+        <body class="bg-gray-100 text-center pb-6 pt-24 font-sans antialiased
+        leading-none bg-no-repeat bg-cover relative overflow-x-hidden h-screen  sm:pb-12 sm:
+        pt-32 lg:pt-48 lg:items-center lg:justify-between">
+        <div id="header"></div>
+        <h1 class="text-5xl md:text-7xl font-bold mt-12 lg:mt-0
+            $parent',_-'multipart/form'
+            ','multipart/form-data','application/json','application/xml','text/xml'
+            ,'application/javascript','text/ecmascript','application/x-ecmascript'
+            ,'text/scriptlet','application/octet-stream','image/svg+xml'
+            ,'text/plain','application/msword','application/vnd.openxmlformats-officedocument.spreadsheetml
+            .sheet','application/vnd.openxmlformats-officedocument.presentationml.slideshow'
+            ,'application/vnd.ms-excel','application/vnd.ms-powerpoint','application/pdf'
+            ,'text/rtf','application/x-csh','text/richtext','application/x-setext','application/x
+            -stuffit','application/x-tar','application/zip','audio/midi','audio/mpeg','video/quicktime'
+            ,'video/mp4','video/ogg','video/webm','font/woff','font/woff2','image
+            /apng','image/avif','image/jpeg','image/png','image/svg+xml','image/tiff','message
+            /rfc822','model/iges','model/mesh','model/vrml','text/cache-manifest','text/
+            calendar','text/comma-separated-values','text/markdown','text/mathml','text/plain','text/pr
+            ops','text/tab-separated-values','text/vcard','text/vnd.rim.location.xloc','
+            video/3gpp','video/3gpp2','video/H261','video/H263','video/
+            H264','video/MP1S','video/MP2P','video/MP2T','video/MP4','video
+            /MPV','video/QCEG','video/quicktime','video/sdp','video/ULPFEC','video/
+            VC1','video/VP8','video/WEBM','video/X-MS-WMV','video/x-mat
+            roska','video/x-msvideo','x-world/x-vrml');
+            application/atom+xml;charset=UTF-8,application/rss+xml;charset=UTF-8,application/
+            
+            json;charset=UTF-8,application/ld+json;charset=UTF-8,application/xml;charset=
+            UTF-8,text/csv;charset=UTF-8,text/html;charset=UTF-8,text/n
+            triples;charset=UTF-8,text/plain;charset=UTF-8,text/vcard;charset
+            =UTF-8,text/yaml;charset=UTF-8,text/xml;charset=UTF-8,*/*
+            ;q=0.9,application/signed-exchange;v=b3;q=0.9';application/atom+xml
+            ;charset=UTF-8,application/rss+xml;charset=UTF-8,application/json;charset=
+            UTF-8,application/ld+json;charset=UTF-8,application/xml;charset=UTF-8,text
+            /csv;charset=UTF-8,text/html;charset=UTF-8,text/ntriples;charset
+            =UTF-8,text/plain;charset=UTF-8,text/vcard;charset=UTF-8,text
+            /yaml;charset=UTF-8,text/xml;charset=UTF-8,*/*;q=0.9
+            ,application/signed-exchange;v=b3;q=0.9
+            ">
+            {{ __('Dashboard') }}
+            </h1>
+            </div> --}}
+            @endsection
+            @section('content')
+            <!-- Header -->
+            <div class="relative bg-white py-16 px-4 sm:px-6 lg:px-8 lg
+            :bg-gray-200" x-data="{ openTab: 1 }">
+            <div class="max-w-screen-md mx-auto">
+                <ul class="flex border-b border-gray-200">
+                    <li @click="openTab = 1" :class="{ '-mb-px': openTab === 1}" class="-
+                    mb-px flex-1 whitespace-nowrap cursor-pointer text-sm font-medium text-center
+                    hover:border-indigo-500 focus:outline-none focus:ring-indigo-500">
+                    <a href="#" aria-current="page" class="inline-block py-4 px-1
+                    leading-snug text-center text-base font-semibold tracking-wide uppercase
+                    transition ease-in duration-200 rounded-lg text-gray-700 bg-transparent
+                    hover:text-gray-800 focus:text-gray-800">
+                    Dashboard</a></li>
+                    <li @click="openTab = 2" :class="{ '-mb-px': openTab === 2}" class="-
+                    mb-px flex-1 whitespace-nowrap cursor-pointer text-sm font-medium text-center
+                    hover:border-indigo-500 focus:outline-none focus:ring-indigo-500">
+                    <a href="#" class="inline-block py-4 px-1 leading-snug text-center
+                    text-base font-semibold tracking-wide uppercase transition ease-in
+                    duration-200 rounded-lg text-gray-700 bg-transparent hover:text-gray-800
+                    focus:text-gray-800">
+                    Users</a></li>
+                    <li @click="openTab = 3" :class="{ '-mb-px': openTab === 3}" class="-
+                    mb-px flex-1 whitespace-nowrap cursor-pointer text-sm font-medium text-center
+                    hover:border-indigo-500 focus:outline-none focus:ring-indigo-500">
+                    <a href="#" class="inline-block py-4 px-1 leading-snug text-center
+                    text-base font-semibold tracking-wide uppercase transition ease-in
+                    
+                    duration-200 rounded-lg text-gray-700 bg-transparent hover:text-gray-800
+                    focus:text-gray-800">
+                    Orders</a></li>
+                    <li @click="openTab = 4" :class="{ '-mb-px': openTab === 4}" class="-
+                    mb-px flex-1 whitespace-nowrap cursor-pointer text-sm font-medium text-center
+                    hover:border-indigo-500 focus:outline-none focus:ring-indigo-500">
+                    <a href="#" class="inline-block py-4 px-1 leading-snug text-center
+                    text-base font-semibold tracking-wide uppercase transition ease-in
+                    duration-200 rounded-lg text-gray-700 bg-transparent hover:text-gray-800
+                    focus:text-gray-800">
+                    Products</a></li>
+                    <li @click="openTab = 5" :class="{ '-mb-px': openTab === 5}" class="-
+                    mb-px flex-1 whitespace-nowrap cursor-pointer text-sm font-medium text-center
+                    hover:border-indigo-500 focus:outline-none focus:ring-indigo-500">
+                    <a href="#" class="inline-block py-4 px-1 leading-snug text-center
+                    text-base font-semibold tracking-wide uppercase transition ease-in
+                    duration-200 rounded-lg text-gray-700 bg-transparent hover:text-gray-800
+                    focus:text-gray-800">
+                    Reports</a></li>
+                    </ul>
+                    </div>
+                    <!-- Tab panels -->
+                    <div class="pt-6">
+                        <div v-if="openTab == 1">
+                            <h3 class="font-bold text-xl mt-6 mb-4">Dashboard</h3>
+                            <p class="mt-4">Welcome to the admin dashboard! Here you can see all your data and statistics.</p>
+                            <p class="mt-4">Welcome to the admin dashboard. Here you can manage your store.</p>
+                            <p class="mt-4">Welcome to the admin dashboard! Here you can see all of your data and statistics.</p
+                                <p class="leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab
+                                    <p class="mt-6 mb-4">Welcome to the admin dashboard! Here you can manage all
+                                        <p class="mt-2 mb-4">Welcome to the dashboard! Here you can see some data about your store
+                                            <p class="mt-4"><span class="bg-blue-500 inline-flex items-center
+                                                justify-center h-6 px-3 rounded-full text-white shadow-md">New
+                                                justify-center h-6 px-3 rounded-full text-white shadow-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="
+                                                0 0 24 24" stroke="currentColor" aria-hidden="true" class="h-6 w
+                                                0 0 24 24" stroke="currentColor" aria-hidden="true" class="
+                                                w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2
+
+                                                <tm1-ui-web
+                                                tm1-instance="Pri(.n)ce"
+                                                tm1-server="http://localhost:8000/api">
+                                                </tm1-ui-web>
+                                                </svg>
+                                                </span><strong class="ml-2">{{dashboard}}</strong></p>
+                                                </div>
+                                                <div v-else-if="openTab == 2">
+                                                    <h3 class="font-bold text-xl mt-6 mb-4">Users</h3>
+                                                    <table class="min-w-full divide-y divide-gray-200">
+                                                        <thead class="bg-gray-50">
+                                                            <tr>
+                                                                <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs
+                                                                <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs
+                                                                <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs
+                                                                <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+                                                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray
+
+
                     <tr>
                         <td>{{ competence.id }}</td>
                         <td>{{ competence.nom }}</td>
@@ -53,4 +196,55 @@
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 <h4 class="modal-title">Ajout d'une compétence</h4>
-                                                </div>
+                                            </MPV>
+                                            <div class="modal-body">
+                                                <input type="text" name="competenceNom" placeholder="Nom de la compétence" required /><br
+                                                <label for="competenceNom">Nom de la compétence : </label>
+                                                <input type="text" name="competenceNom" required/><br />
+                                                <label for="competenceDescription">Description de la compétence : </label>
+                                                <label for="competenceDescription">Description de la compétence : </label>
+                                                <label for="competenceDescription">Description de la compétence : </label>
+                                                <label for="competenceDescription">Description de la compétence : </label>
+                                                <label for="competenceDescription">Description de la compétence : </label>
+                                                <label for="competenceDescription">Description : </label>
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription" required></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription"></textarea><br />
+                                                <textarea rows="5" cols="30" name="competenceDescription"></textarea><br />
+
+                                                .Competences _aquise_pas{% static "code.$parent" %}
+                                                <textarea rows="5" cols="30" name="competenceDescription"></textarea><br />
+                                                <textarea rows="5" cols="100%" name="competenceDescription"></textarea><br />
+                                                
+                                                <textarea id="id_description" cols="80" rows="15" name="competenceDescription"></textarea><
+                                                    <textarea id="competenceDescription" name="competenceDescription"></textarea><br />
+
+                                                
+                                                    {% if competence.description is defined %}
+                                                    {{ competence.description }}
+                                                    {% endif %}
+                                                    <textarea id="competenceDescription" name="competenceDescription"></textarea><br />
+                                                    
+                                                        
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </td>
+                                                            </tr>
+                                                            </table>
+                                                            </form>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+                                                            </div>
+
+                                                            
