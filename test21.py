@@ -17,7 +17,7 @@ def translate_text(text, target_language):
 # Set your JSON file path
 json_file_path = 'your_file_path.json'
 
-# Read the data from the JSON file
+# Read the data from the JSON file:
 data = read_data_from_json_file(json_file_path)
 
 # Set the target language
