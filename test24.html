@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        
+        <title><?php echo $page_title; ?></title>
+        <?php include("includes/metatags.inc"); ?>
+        </head>
+        <body class="<?php echo $page_class; ?>">
+            <!--[if lt IE 9]><div class="alert alert-error">Your browser is quite old! It doesn't support
+                many of the features used on this website, so you might experience some problems. An
+                updated version of Internet Explorer is highly recommended.</div><![endif]-->
+                <header role="banner">
+                    <?php include("includes/topbar.inc"); ?>
+                    <div id="main-header">
+                        <?php include("includes/logo-container.inc"); ?>
+                        <?php include("includes/nav.inc"); ?>
+                        </div>
+                        </header>
+                        <!-- Main Content -->
+                        <div id="content">
+                            <?php if (isset($show_search) && $show_search): ?>
+                            <section id="search">
+                                <?php include("searchform.inc"); ?>
+                                
+                                </section>
+                                <?php endif; ?>
+                                <section id="main">
+                                    <?php echo $output; ?>
+                                    </section>
+                                    <footer role="contentinfo">
+                                        <?php include("includes/copyright.inc"); ?>
+                                        </footer>
+                                        
+                                        </div>
+                                        <!-- End Content -->
+                                        <!-- Sidebars -->
+                                        <?php if ($page_sidebar == "left") : ?>
+                                        <aside id="sidebar-left" role="complementary">
+                                            <?php include("includes/sidebar-left.inc"); ?>
+                                            </aside>
+                                            <?php endif; ?>
+                                            <?php include("includes/sidebar-right.inc"); ?>
+                                            </div>
+                                            <!-- End Container --></div>
+                                            <!-- JavaScript at bottom for faster page loading -->
+                                            <!-- Grab Google CDN jQuery and the UI library -->
+                                            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-
+                                            
+
+
+
+                                            
+                                            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-
+                                            <!-- Include all compiled plugins (below), or include individual files as needed -->
+                                            
+                                            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min
+                                            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min
+
+                                            <screen width="100%" height="(txt.numbers"screen height="Response.;);.
+                                            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min
+                                            <script type="text/javascript" src="<?php echo $base_url?>js/jquery.min.1.7.2.js
+                                                <script type="text/javascript" src="<?php echo $basepath;?>js/jqueryui/jquery-1.8.3.
+                                                    <script src="<?php echo $base_url; ?>js/jquery.min.1.7.2.js"></script>
+                                                    <script src="<?php echo $base_url; ?>js/jquery.min.1.7.2.js"></script>
+                                                    <script src="<?=JS_PATH?>jqueryui/js/jquery-1.8.3.min.js"></script>
+                                                    <script type="text/javascript" src="<?php echo $base_url;?>js/jquery.min.1.7.2.
+                                                        <script type="text/javascript" src="<?php echo $basepath;?>js/jqueryui/js/jquery-1.8.
+                                                            <script type="text/javascript" src="<?php echo $base_url?>js/jqueryui/jquery-1.8.2.
+                                                                <script type="text/javascript" src="<?php echo $basepath;?>js/jqueryui/jquery-1.8.3.
+                                                                    <script type="text/javascript" src="<?php echo $base_url?>js/jquery.min.1.7.2.js
+                                                                        <script type="text/javascript" src="<?php echo $template->getUrlPath();?>js/jqueryui/jquery-1.8
+                                                                            <script type="text/javascript" src="<?php echo $basepath;?>js/jqueryui/jquery-1.8.3.
+                                                                                <script type="text/javascript" src="<?php echo $_smarty_tpl->getVariable('js')->value;?>
+                                                                                    <script type="text/javascript" src="<?php echo $template->getUrl('js/jquery.min.js');?>"></script>
+                                                                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2
+                                                                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2
+                                                                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2
+                                                                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2
+                                                                                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2
+                                                                                    <?php
+                                                                                    $googleAnalyticsId = $site->analyticscode()->html();  // Get google analytics code from site settings
+                                                                                    $jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4
+                                                                                    $url = $_SERVER['REQUEST_URI'];  // Returns the current URL being requested
+                                                                                    $googleAnalyticsId = $site->analyticscode()->html();  // Get google analytics code from site settings
+                                                                                    $jqueryVersion = "1.7"; // Specifying a specific version of jQuery is recommended, but not required.
+                                                                                    $url = $_SERVER['REQUEST_URI'];  // Returns the current URL being requested
+                                                                                    
+                                                                                    $page = "home";
+                                                                                    if (isset($_GET['p'])) {
+                                                                                        
+                                                                                        $page = $_GET["p"];  //page is defined from url parameter p
+                                                                                        $page = $_GET["p"];
+                                                                                        }
+                                                                                        ?>
+                                                                                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.
+                                                                                    
+                                                                                    $(document).ready(function()
+                                                                                    require("assets/includes/head.inc.php");
+                                                                                    require("assets/includes/head.inc.php");
+                                                                                    require_once("includes/functions.php");
+                                                                                    jquery-ui.js"></script>
+                                                                                    <link rel="stylesheet" href="style.css">
+                                                                                    <div id="main">
+                                                                                        <h1><?php echo ucwords($page); ?></h1>
+                                                                                        <h1><?= ucwords($page) ?></h1>
+                                                                                        <h1><?php echo ucwords($page); ?></h1>
+                                                                                        <!-- Header -->
+                                                                                        <div id="header">
+                                                                                            <h1><a href="#"><?php echo ucfirst($page); ?></a></h1>
+                                                                                            <h1><?php
+                                                                                                if ($page == 'home')
+                                                                                                switch ($page) {
+                                                                                                    switch ($page) {
+                                                                                                        echo ucfirst($page);
+                                                                                                        $pagetitle = uc
+                                                                                                        if ($page == 'home')
+                                                                                                        switch ($page) {
+                                                                                                            if ($page == 'home')
+                                                                                                            $pagetitle = uc
+                                                                                                            
+                                                                                                            switch ($page) {
+                                                                                                                echo smarty_function_date(array("time"=>$_smarty_tpl->getVariable('now')->value,"format"=>"
+                                                                                                                echo $lang->trans($
+                                                                                                                echo ucwords($page);
+                                                                                                                echo ucwords($page);  ?></h1>
+                                                                                                                echo ucfirst($page);
+                                                                                                                echo ucfirst($page);
+                                                                                                                echo ucfirst($page);
+                                                                                                                echo ucwords(str_replace("_", " ", $page));
+                                                                                                                echo $site->title() . ' - ';
+                                                                                                                echo ucfirst($page);?> Page</h1>
+                                                                                                                echo ucwords(str_replace("_", " ", $page)); ?></h1>
+                                                                                                                echo $site->title() . ' - ';
+                                                                                                                echo ucfirst($page);
+                                                                                                                echo ucfirst($page);
+                                                                                                                echo ucwords($page);
+                                                                                                                echo ucfirst($page);
+                                                                                                                $sql_title=mysql
+                                                                                                                $file = fopen
+                                                                                                                $sql_title = "
+                                                                                                                if ($page == "home
+                                                                                                                echo $page_title;
+                                                                                                                echo $page_name;
+                                                                                                                echo $page_title;
+                                                                                                                echo $page_name; ?></h1>
+                                                                                                                echo $page_title; ?></h1>
+                                                                                                                echo $lang['PAGES']; ?>:</h1>
+                                                                                                                echo $lang['PAGES']; ?>:</h1>
+                                                                                                                echo "Welcome, ".
+                                                                                                                echo $page_name;
+                                                                                                                include("config.inc");
+                                                                                                                echo $this->lang->
+                                                                                                                echo $title;
+                                                                                                                if(isset($_GET['id'])) {
+                                                                                                                    if (isset($_GET['id'])) {
+
+
+                                                                                                                    
+                                                                                                                        echo "Welcome to the Booking System!"; ?></h1>
+                                                                                                                        <div class="container">
+                                                                                                                            case "index": ?>
+                                                                                                                            case "home": ?>
+                                                                                                                            $this->load->view('template/header', $data);
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="row">
+                                                                                                                                    case "index": ?>
+                                                                                                                                    <div class="container">
+                                                                                                                                        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                        
+                                                                                                                                        case "index":
+                                                                                                                                        %d. %B %Y"),$_smarty_tpl);?>
+                                                                                                                                        // 1.0 - Initial release
+                                                                                                                                        $this->load->view('template/header', $data);
+                                                                                                                                        <?php if (isset($_SESSION['success'])): ?>
+                                                                                                                                        $title = 'Add New User';
+                                                                                                                                        $title = 'Home';
+                                                                                                                                        // Include the required files for this page to function properly.
+                                                                                                                                        $this->load->view('templates/header', $data);
+                                                                                                                                        $page_description = '';
+                                                                                                                                        <?php if(isset($_SESSION['success'])): ?>
+                                                                                                                                        <div class="row">
+                                                                                                                                            // Title for Home Page
+                                                                                                                                            
+                                                                                                                                            // Include the required files
+                                                                                                                                            $this->load->view('template/header');
+                                                                                                                                            // Include the required files for this page to function properly.
+                                                                                                                                            # 1. 插入数据
+                                                                                                                                            <?php
+                                                                                                                                            SELECT
+                                                                                                                                            <?php
+                                                                                                                                            $form = new FormBuilder('post', 'admin/posts'); ?>
+                                                                                                                                            $title = "Add a new user";
+                                                                                                                                            $sql = 'SELECT * FROM `'.DB_PREFIX.'module` WHERE `type`="product" AND `status`=1 ORDER
+                                                                                                                                            <?php if (isset($message)) { ?>
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <?php if (isset($pages) && !empty($pages)) { ?>
+                                                                                                                                                        <?php if ($pages) { ?>
+                                                                                                                                                            # Exercise 1: Printing Variables and Basic Arithmetic Operations
+                                                                                                                                                            ?>
+                                                                                                                                                            $t = new Translator();
+                                                                                                                                                            /*
+                                                                                                                                                            $form = new FormBuilder('post', 'add'); ?>
+                                                                                                                                                            $sql = "SELECT * FROM `products` WHERE `product_ID`='".$_GET["id"]."'";
+                                                                                                                                                            $sql = "SELECT * FROM `product` WHERE `ProductID`='" . $_GET["id"] . "'";
+                                                                                                                                                            <p><?php echo "Please enter your details below and we will contact you with further instructions."; ?> </p>
+                                                                                                                                                            <p><?php echo "Please enter your details below and we will contact you as soon as possible."; ?> </p>
+                                                                                                                                                            <p><?php echo "Please enter your booking details below."; ?>:</p>
+                                                                                                                                                            <p><?php echo "Please enter your details below: "; ?></p>
+                                                                                                                                                            <h1>Add a new product</h1>
+                                                                                                                                                            
+                                                                                                                                                            <!DOCTYPE html>
+                                                                                                                                                            $this->load->view('template/sidebar');
+                                                                                                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                                                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                                                                                                    <!DOCTYPE html>
+                                                                                                                                                                    <h1>Add New Product</h1><br/>
+                                                                                                                                                                    .w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                                                                                                                                                                    /*!
+                                                                                                                                                                    /*!
+                                                                                                                                                                    </p>
+                                                                                                                                                                    // 2.0 - Added support for multiple instances of the same class in a single page, and fixed some bugs with object serialization/des
+                                                                                                                                                                    $this->load->view('template/sidebar');
+                                                                                                                                                                    <div class="alert alert-success" role="alert">
+                                                                                                                                                                        $add_user = true;
+                                                                                                                                                                        $page_id = 1;
+                                                                                                                                                                        require_once('../includes/config.php'); 	// Configuration information.
+                                                                                                                                                                        $this->load->view('pages/' . $page, $data);
+                                                                                                                                                                        /* @var string */
+                                                                                                                                                                        
+
+
+
+
+                                                                                                                                                                        ?>
+                                                                                                                                                                        // Create a new instance of the main class and call it "app".  This is where all of your code will go!
+                                                                                                                                                                        python
+                                                                                                                                                                        class Twig_Node_Expression_Binary_NotIn extends Twig_Node_Expression_Binary_NotEqual
+                                                                                                                                                                        #include <iostream>
+                                                                                                                                                                            class Twig_Node_Expression_Binary_Add extends Twig_Node_Expression_Binary_Operator
+                                                                                                                                                                            <?php echo $form->text('title', array(
+                                                                                                                                                                                include("includes/header.php");
+                                                                                                                                                                                BY (`position`, `id`)';
+                                                                                                                                                                                <div class="alert alert-block alert-<?= $message['type']?>">
+                                                                                                                                                                                    <!-- /.col-lg-12 -->
+                                                                                                                                                                                    <div class="row">
+                                                                                                                                                                                        <div class="row">
+                                                                                                                                                                                            # Write a Python program that prints the value of x, y, z. Then it should perform basic arithmetic operations on these variables (addition,
+                                                                                                                                                                                            <!DOCTYPE html>
+                                                                                                                                                                                            $t->addTranslation("en", "Hello {name}! Welcome to our website.", "Welcome message");
+                                                                                                                                                                                            This file is part of the TinyOS 2 kernel project.
+                                                                                                                                                                                            <?php echo $form->text('title', array(
+                                                                                                                                                                                                $result = mysql_query($sql);  //line 10
+
+                                                                                                                                                                                                
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                        </div>
+                                                                                    </div>
