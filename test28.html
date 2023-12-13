@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+    </head>
+</html"' -(Time.data)'>
+<!doctype html><html class="no-js" lang="fr"><!--[if lt IE 7]><html class
+    = "ie6 oldie no-js" lang="fr"><![endif]--><!--[if IE 7]><html class="
+        ie7 oldie no-js" lang="fr"><![endif]--><!--[if IE 8]><html class="ie8
+            oldie no-js" lang="fr"><![endif]-->
+            <head>
+                <link rel="shortcut icon" href="/favicon.ico"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <meta name="viewport" content="width=device-width"/>
+                <meta charset="utf-8"/>
+                <title>Erreur de serveur - Le site est actuellement en maintenance.</title>
+                <script type="text/javascript" src="/assets/application-02534d9a6c9e0baf
+                619ffbee9ba9cfdd.js"></script>
+                </head>
+                <body id="error_page">
+                    <!--[if lte IE 8]><div class="oldie-warning"><div class="container
+                        
+                </body>
+            </head>
+            </html>
+            ERROR: 500 Internal Server Error: An error occurred while processing your request.
+            --%>
+            Error code : <%= exception.getClass().getName() %>
+            Message : <%= exception.getMessage() %>
+            <%
+                Throwable cause = exception;
+                while (cause.getCause() != null) {
+                    cause = cause.getCause();
+                    %><br/>
+                    Caused by : <%= cause.getClass().getName() %>
+                    <%= cause.getMessage() %><%
+                        }
+                        %>
+                        Stack trace :
+                        <pre><%= exception %></pre>
+                        <p>The application is currently undergoing maintenance and will be back soon.</p>
+                        </div>
+                        </div>
+                        </body>
+                        </html>
+                        <%
+                            throw new ServletException(exception);
+                            %>
+                            </s>
+                            #include "../header/server.h"
+                            #include "../header/client.h"
+                            int main(){
+                                //Initialisation of the server
+                                initServer(&serv);
+                                //Connection to the client
+                                connectToClient(&cli, serv.sockfd);
+                                //Main loop of the server
+                                serverLoop(&serv, &cli);
+                                return 0;
+                                }
+                                /*
+                                This function initialise a server structure with all its attributes.
+                                @param s : A pointer on a server structure.
+                                */
+                                void initServer(t_server* s){
+                                    s->port=PORT;
+                                    s->addrLen=sizeof(s->clientAddr);
+                                    s->maxConn=MAX_CONNECTIONS;
+                                    
+                                    FD_ZERO(&(s->masterSet));
+                                    if((s->listenfd=socket(AF_INET,SOCK_STREAM,0))==-1)
+                                    perror("Socket error");
+                                    memset(&(s->servAddr),0,sizeof(struct sockaddr_in));
+                                    s->servAddr.sin_family=AF_INET;
+                                    s->servAddr.sin_addr.s_addr=htonl(INADDR_ANY);
+                                    s->servAddr.sin_port=htons(s->port);
+                                    bind(s->listenfd,(struct sockaddr*)&(s->servAddr),sizeof(s->servAddr
+                                    ));
+                                    listen(s->listenfd,s->maxConn);
+                                    FD_SET(s->listenfd ,&(s->masterSet));
+                                    printf("\nServer started.\nListening on port %d\n",s->port);
+                                    
+                                    }
+                                    /*
+                                    This function add a socket descriptor to the master set of file descriptors
+                                    This function add a socket file descriptor to the master set of the server.
+                                    This function add a socket fd to the master set of the server.
+                                    @param m : The master set of the server.
+                                    @param s : The socket file descriptor to add.
+                                    */
+                                    void add2MasterSet(t_FDSet *m,int s){
+                                        FD_SET(s,m);
+                                        if(s > (*m).fds_bits)
+                                        {
+                                            (*m).fds_bits = s + 1;
+                                            
+                                            }
+                                            }
+                                            /*
+                                            Function used for connecting to a remote client.
+                                            It create a new connection and add it to the master set of the server.
+                                            It create a new socket and make a connection request to the given IP address and Port number.
+                                            
+                                            @param c : A pointer on a client structure.
+                                            @return : -1 if an error occured else 0.
+                                            */
+                                            int connectToClient(t_client *c)
+                                            {   char buffer[BUFFER_SIZE];
+                                                struct hostent *hst;
+                                                //gethostbyname() returns a pointer to a hostent structure that contains information about the network host for which addr is
+                                                // gethostbyname returns a pointer to a hostent structure that contains information about the host machine named by the hostname
+                                                //gethostbyname() returns a linked list of one or more host enties (each containing information about one host)
+                                                
+                                                if ((hst=gethostbyname(c->host)) == NULL) {
+                                                    herror("gethostbyname() failed.");
+                                                    
+                                                    return -1;
+                                                    }
+                                                    c->sockfd = socket(PF_INET, SOCK_STREAM, 6);
+                                                    bzero((char *) &(c->cliAddr), sizeof(struct sockaddr_in));
+                                                    if (connect(c->sockfd, hst->h_addr, hst->h_length) != 0
+                                                    || !setNonBlocking(c->sockfd)) {
+                                                        perror("Failed to connect");
+                                                        close(c->sockfd);
+                                                        return -1;
+                                                        }
+                                                        //add it to the list of clients of the server
+                                                        c->next = NULL;
+                                                        c->prev = NULL;
+                                                        if(server.clients==NULL)
+                                                        {
+                                                            server.clients=c;
+                                                            c->next=c;
+                                                            }
+                                                            else
+                                                            {
+                                                                c->next=server.clients;
+                                                                server.clients->prev=c;
+                                                                server.clients=c;
+                                                                }
+                                                                fd_set_socket(&master, c->sockfd);
+                                                                printf("New connection from %s on port %d\n", inet_ntoa(*((struct in_addr
+                                                                printf("New connection from %s:%i\n", inet_ntoa(*((struct in_addr*)h
+                                                                printf("New connection from %s:%i\n", c->host, c->port);
+                                                                printf("New connection from %s:%i\n", inet_ntoa(*((struct in_addr*)h
+                                                                printf("New connection from %s:%i\n", inet_ntoa(*((struct in_addr*)h
+                                                                printf("New connection from %s:%u\n", inet_ntoa(*((struct in_addr*)h
+                                                                printf("\nNew connection from %s:%i\n", c->host, c->port);
+                                                                printf("New connection from %s:%i\n", c->host, c->port);
+                                                                printf("New client connected from %s:%u\n", c->host, ntohs(c->port));
+                                                                printf("New client %s:%u\n", c->host, c->port);
+                                                                printf("New connection from %s:%u\n", c->host, ntohs(c->port));
+                                                                printf("New connection from %s:%u\n", c->host, ntohs(c->port));
+                                                                printf("\nNew client connected from %s:%u\n", c->host, ntohs(c->port));
+                                                                printf("New client %s:%d\n", c->host, c->port);
+                                                                printf("New client %s:%i\n", c->host, c->port);
+                                                                printf("\nNew client connected from %s on port %d\n", inet_ntoa(*((struct in
+                                                                printf("\nNew client connected from %s on port %d\n",inet_ntoa(*((struct in_
+                                                                printf("\nNew connection from %s on port %d\n", inet_ntoa(*((struct in_
+                                                                printf("New client %s:%u\n", c->host, c->port);
+                                                                printf("\nNew client connected from %s on port %d\n", inet_ntoa(*((struct in
+                                                                printf("\nNew client connected from %s on port %d\n", inet_ntoa(*((struct in
+                                                                printf("\nNew client connected from %s on port %d\n", inet_ntoa(*((struct in
+                                                                printf("New client connected.\n");
+                                                                }
+                                                                /*else
+                                                                {
+                                                                    
+                                                                    char buffer[256];
+                                                                    sprintf(buffer,"Client with IP %s is already connected\n",inet_ntoa(*((struct in
+                                                                    strcpy(buffer,"Server: Client with IP ");
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    
+                                                                    strcat(buffer,inet_ntoa(*((struct in_addr*)&client_address.sin_addr
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    strcat(buffer,inet_ntoa(clientaddr.sin_addr));
+                                                                    if (n == -1)
+                                                                    sprintf(strcat(buffer,inet_ntoa(clientaddr.sin_addr))," is not allowed
+                                                                    sprintf(buffer+strlen(buffer),"%s:%d is not a valid TCP/IP connection\r
+                                                                    sprintf(strcat(buffer,inet_ntoa(clientaddr.sin_addr))," is not allowed
+                                                                    sprintf(strcat(buffer,inet_ntoa(clientaddr.sin_addr))," is not allowed
+                                                                    sprintf(strcat(buffer,inet_ntoa(clientaddr.sin_addr))," tried to connect
+                                                                    sprintf(strcat(buffer,"%s is not valid\r\n"),inet_ntoa(client
+                                                                    sprintf(strcat(buffer,inet_ntoa(clientaddr.sin_addr))," is gone!
+                                                                    sprintf(strcat(buffer,inet_ntoa(client_address.sin_addr))," is off
+                                                                    sprintf(strcat(buffer,inet_ntoa(c->addr.sin_addr))," has left
+                                                                    sprintf(strcat(buffer,inet_ntoa(c->addr.sin_addr))," has left
+                                                                    sprintf(&buffer[strlen(buffer)],"%s disconnected.",inet_ntoa(clientAdd
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(&buffer[strlen(buffer)],"%s is offline.",c->host);
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(strcat(buffer,c->host)," is not responding. Closing the connection...\n
+                                                                    sprintf(&buffer[strlen(buffer)],"%s is not responding. Disconnecting...\n
+                                                                    
+                                                                    sprintf(&buffer[strlen(buffer)],"%s is not responding. Disconnecting...\n
+                                                                    sprintf(strcat(buffer,inet_ntoa(*((struct in_addr*)&c->rsa
+                                                                    sprintf(strcat(buffer,inet_ntoa(*((struct in_addr*)&c->rsa
+                                                                    
+                                                                    sprintf(strcat(buffer,c->host)," is not responding. Closing connection...\n");
+                                                                    sprintf(strcat(buffer,c->host)," is not responding. Disconnecting...\n");
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(buffer+strlen(buffer),"%s disconnected.",inet_ntoa(client.sin
+                                                                    sprintf(&buffer[strlen(buffer)],"%s disconnected.",inet_ntoa(client.
+                                                                    sprintf(&buffer[strlen(buffer)],"%s disconnected.", inet_ntoa(*((
+                                                                        sprintf(&buffer[strlen(buffer)],"%s is not responding.\n", inet_n
+                                                                        sprintf(&buffer[strlen(buffer)],"%s is not responding.\n\r", inet
+                                                                        sprintf(strcat(buffer,inet_ntoa(client.sin_addr))," closed connection.\r
+                                                                        sprintf(buffer + strlen(buffer),"%s is offline.\n\r", inet_n
+                                                                        sprintf(buffer+strlen(buffer),"%s is offline.", inet_ntoa(*((
+                                                                            return NULL;
+                                                                            sprintf(&buffer[strlen(buffer)],"%s is disconnected.", in
+                                                                            
+                                                                            } else {
+                                                                                struct hostent *host = gethostbyaddr(&client_address.sin_addr, sizeof(struct in_
+                                                                                buffer[strlen(buffer)] = ':';
+                                                                                sprintf(&buffer[strlen(buffer)],"%d", ntohs(clientaddr.sin_port
+                                                                                sprintf(&buffer[strlen(buffer)], "%d", ntohs(clientaddr.sin_port));
+                                                                                sprintf(&buffer[strlen(buffer)],"%d", ntohs(clientaddr.sin_port
+                                                                                sprintf(&buffer[strlen(buffer)], "%d", ntohs(clientaddr.sin_port));
+                                                                                strcat(buffer, "0");  // add a zero to the end of the string.
+                                                                                strcpy(buffer+strlen(buffer),itoa(ntohs(clientaddr.sin_port),temp
+                                                                                strcat(buffer, port);
+                                                                                }");
+                                                                                fclose (fptr);
+                                                                                }
+                                                                                }
+                                                                            }
+                                                                            }
+                                                                            }
+                                                                            }
+                                                                            }*//www.opensource.org/licenses/mit
+                                                                            #endif /* __linux__ */
+                                                                            /* Windows version of the function.  This will be
+                                                                            #ifdef _WIN32
+                                                                            if ((iResult = recvfrom(ConnectSocket, buffer + strlen(buffer), 1500 -
+                                                                            
+                                                                            if ((WSAStartup(MAKEWORD(2, 0), &wsa) != 0)) {
+                                                                                if ((!ConnectSocket) || (getsockname(ConnectSocket, (struct sockaddr*)&socket_in
+                                                                                if ((NULL == hostname) || ('\0' == hostname[0])) {
+                                                                                    if ((!ConnectSocket) || (getsockopt(ConnectSocket, SOL_SOCKET, SO_ERROR
+                                                                                    // Windows version
+                                                                                    HKEY key;
+                                                                                    DWORD type;
+                                                                                    char data [256];
+                                                                                    DWORD size = 256;
+                                                                                    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SYSTEM\\CurrentControl
+                                                                                    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,"SYSTEM\\Current
+                                                                                    LONG result;
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    result = RegOpenKeyExA(HKEY_CURRENT_USER, "
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    result = RegOpenKeyExA(HKEY_LOCAL_MACHINE
+                                                                                    
