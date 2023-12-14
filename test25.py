@@ -113,4 +113,29 @@ def get_global(varName:str)->Any:
                                 ConfigSource();
                                 /**
 
+                                (if you (if you (if you (if you (if you (if you (if))
+                                don't use this constructor and instead use one of the following constructors.)
+                                don't provide an argument, it will use standard input as its source.)
+                                instead.) will be used as its source.) instead.) will be used as its source.)
+                                instead.) will be used as its source.) instead.) will be used as its source.)
+                                instead.) will be used as its source.) instead.) will be used as its source.)
+                                instead.) will be used as its source.) instead.) will be used as its source.)
+                                instead.) will be used as its source.) instead.) will be used as its source.)
+                                instead.) will be closed after being used.
+                                @param argc The number of command line arguments passed to the program. If this is not provided, standard input will be used instead.
+                                @param argv[in] The command line arguments to read from. If this is not provided, standard input will be used instead.
+                                
+                                *
+                                * @param file The path to the file that should be read from. If this is not provided, standard input will be used instead.
+                                * @param file The path to the JSON file that should be used as the source for this config source. If no argument is provided,
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
+                                * @param src The file or stream to read from. If this is not provided, standard input will be used instead.
+                                * @param src The file or stream to read from. If this is not provided, standard input will be used instead.
+                                * @param src The file or stream to read from. If this is not provided, standard input will be used.
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
+                                * @param is - The stream to read from. If this parameter is not provided, standard input will be used.
+                                * @param file The name of the file to read from. If this is not provided, standard input will be used instead.
                                 
