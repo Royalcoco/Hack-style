@@ -1,0 +1,249 @@
+<!DOCTYPE html' -'({% url {% comment %}
+  {% filter @adult.content %}
+    key.get url.(<tm1-ui-upload
+        tm1-instance="Instance Name"
+        tm1-max-size="5"
+        tm1-display-name="Select File"
+        tm1-image-options="String"
+        tm1-path="File Path"
+        tm1-ui-class="string"
+        >
+    </tm1-ui-upload>) {
+        return this.;
+    }
+  {% endfilter %}
+{% endcomment %} %})'
+# The following code snippet is used to generate the HTML for a file upload field in TM1. It should be placed inside an existing HTML
+from django import template
+register = template.Library()
+@register.simple_tag(takes_context=True)
+def upload_field(context, instance='', max_size=None, display_name=None, image_options=None, path=
+'media'):
+request = context['request']
+if not request.user.is_authenticated:
+return ''
+if not instance:
+instance = 'default'
+if not display_name:
+display_name = "Upload a file"
+if not image_options:
+image_options = ""
+url = "%s?%d&amp;%s=%s" % (reverse('tm1.images'), int(time()), 'instance
+', instance)
+return '<div class="fileupload">\n <span>%s</span>\n <input type="hidden" name="%s"
+    id="%s" />\n <a href="#" id="%s_trigger" class="js-fileupload-button button">
+        Choose File</a>\n <div id="%s_container" class="js-fileupload-container">\n   <
+            div class="progress progress-success progress-striped active">\n     <div clas
+            s="bar"></div>\n   </div>\n   <ul class="files"></ul>\n </div>\n <di
+            v class="clearfix"></div>\n <script type="text/javascript">$("#%s").fileuploa
+                d(\'{ \n  dropZone                 : "#%s_container",\n  paramName               : "fi
+                le",\n  createImageThumbnails      : false,\n  addRemoveLinks           : true,\n  maxFi
+                lesize              : %d,\n  acceptFileTypes             : /(.*)/i,\n  imagesOnly          : %s,\n
+                leSize             : %d,\n  acceptFileTypes          : /^.*(%s)$/,/\n  onSend              : fun
+                lesize              : %d,\n  acceptFileTypes             : /(.*)\./i,\n  imagesOnly          : %s,\
+                lesize              : %d,\n  acceptFileTypes             : /(.*)/i,\n  imagesOnly          : %s,\n
+                leSize             : %d,\n  acceptFileTypes          : /^[^\.]+$/, // Necessary so it doesn
+                
+                '\'t try to open the uploaded file in the browser.\n  imagesContainer         : $("#%s")\'.format
+                t accept directories, otherwise the webapp will crash when trying to save them as files.
+                \n  imagesContainer         : $("#%s")\n}\');</scr
+                ipt></div>' % (display_name, 'file_'+instance, 'file_'+instance, 'file_'+instance+'_add
+                ', 'file_'+instance, 'file_'+instance, 'file_'+instance, 'file_'+instance, 'file_'+
+                instance, 'dropzone', 'file_'+instance, max_size if max_size else float("inf"), 'imag
+                es')
+                </s>
+                #include "stdafx.h"
+                #include "CppUnitTest.h"
+                #include "..\Source\MathUtils.h"
+                using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+                TEST_CLASS(MathUtilsTests)
+                {
+                    public: SVGFEMergeNodeElement
+                    
+                    *SVGFEMergeNodeFromString(const std::string &str);
+                    void SVGFEMergeNodeToMarkup(const SVGFEMergeNodeElement &node, std::ostream &
+                    stream);
+                    bool operator==(const SVGFEMergeNodeElement &lhs, const SVGMERGENODEELEMENT
+                    &rhs);
+                    bool operator!=(const SVGFEMergeNodeElement &lhs, const SVGMERGENODEELEMENT
+
+                :<<script(-um)'request.user.is_authenticated
+                is False in test environment.</s>
+                # Scala.js typings for react-native-vector-icons
+                organization := "org.scalablytyped.slinky"
+                
+                name := "react-native-vector-icons__dist-types"
+                version := "9.0.0-alpha.25"
+                scalaVersion := "2.13.3"
+                scalacOptions ++= Seq("-feature", "-g:notailcalls", "-language:implicitConversions", "-P:
+                scalariform:sbt:true", "-P:scalariform:style:official")
+                libraryDependencies += "com.olvind" %| "scalablytyped-runtime" % "4.1.0",
+                resolvers += Resolver.mavenLocal,
+                libraryDependencies += "org.scalablytyped.slinky" %%%% "csstype" % "2.6.
+                14",
+                libraryDependencies += "org.scalablytyped.slinky" %%%% "@types" %%%% "react-
+                native" % "~0.63-alpha",
+                buildInfoKeys := buildInfoKeys.value.toSeq + "moduleName"
+                .asInstanceOf[BuildInfoKey.Standard] -> moduleName.value,
+                buildInfoPackage := "typings"
+                )
+                },
+                releaseProcess := Seq[ReleaseStep](checkSnapshotDependencies, inquireVersions, runClean, runTsc,
+                publishArtifact in packageDoc := false,
+                publishMavenStyle := true,
+                pomIncludeRepository := { _ => false },
+                Test / publishArtifact := false,
+                
+                sonatypeProjectHosting := Some(xerial.sonatype.AppConfiguration.fromEnvironment),
+                licenses += ("MIT", url("http://opensource.org/licenses/mit-license.php"))
+                ),
+                Compile / unmanagedSourceDirectories := Seq(scalaSource.value / "main").filter(_.exists()),
+                Test / unmanagedSourceDirectories := Seq(scalaSource.value / "test").filter(_.exists())
+                )
+                lazy val root = project
+                .in(file("."))
+                
+                .enablePlugins(ScalaJSPlugin)
+                .settings(commonSettings)
+                .aggregate(`dist-types`)
+                """.stripMargin
+                }
+                }
+                }
+                }
+                }
+                })
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                }
+                
+                }
+                """
+                } else if (project.`package`.startsWith("jvm")) {
+                  s"""
+                  ${buildImports}
+                  import Dependencies._
+                  
+                  ThisBuild / scalaVersion     := "$scala213"
+                  ThisBuild / version      := "${versionJVM}"
+                  ThisBuild / organization := "io.github.cquiroz"
+                  ThisBuild / homepage     := Some(url("https://github.com/cquiroz/scalajs-react-
+                  material-ui"))
+                  ThisBuild / scmInfo := Some(ScmInfo(url("https://github.com/cquiroz/scalaj
+                  s-react-material-ui"), "git@github.com:cquiroz/scalajs-react-material-
+                  ui.git"))
+                  
+                  ThisBuild / developers := List(Developer("Christopher Quiroz", "christopher.quir
+                  
+                  oz@gmail.com", "http://www.christopher.re", url("https://twitter.com/Chris
+                  Qurioz")))
+                  publishTo := sonatypePublishToBundle.value
+                  lazily val `dist-js` = project in file("./dist")
+                  .disablePlugins(ScalaUnidocPlugin)
+                  .dependsOn(`dist-sharedJVM`)
+                  .settings(moduleName := "dist-js")
+                  .settings(commonJsSettings)
+                  .settings(publishArtifact in (Compile, packageDoc) := false)
+                  $customProjectSettings
+                  """
+                  } else sys.error(s"Invalid 'package' setting for module '$name': '$pkg'. Valid settings are 'core', 'test
+                  } else sys.error(s"Invalid 'package' setting for module '$name': '$pkg'. Valid settings are 'core', 'test
+                  } else sys.error(s"Invalid 'package' setting for module '$name': '$packageVal'. Valid values are 'jvm',
+                  } else sys.error(s"Invalid platform for module '$name': '${project.`package`}'. Valid platforms are JVM and JS.")
+                  } else sys.error(s"Invalid 'package' setting for project '$name': ${project.`package`}")
+                  ) ++ customProjects.map(_._2).toList :+ (`dist-js` cross CrossType.Pure)</s
+                  >*/
+                  },
+                  /*<s>val root = (project in file(".")).aggregate(coreJSValue, coreJSDTSValue
+                    , coreJVMLib, coreJVMTests, distJVM, distJS)
+                    
+                    .enablePlugins(SonatypeReleasePlugin)
+                    .settings(commonSettings)
+                    .settings(noPublishSettings)
+                    .settings(
+                      
+                    // We need to explicitly list our subprojects here because the aggregate task doesn't
+                    // automatically include them.
+                    Seq(coreJVMLib, coreJVMTests, distJVM, distJS) map (p => compile += (compile
+                    in Compile) dependsOn (compile in p))
+                    */
+                    )
+                    }
+                    """.trim
+                    ).mkString("\n").replaceAll("\n\n", "\n")
+                    })
+                    }
+                    }
+                    if (errors.isEmpty) {
+                      Right((result, projectsMap))
+                      
+                      } else {
+                        Left(errors.toSeq)
+                        
+                        }
+                        } catch {
+                          case e: Throwable => Left(Seq(e.toString))
+                          }
+                          }
+                          def writeBuildFile(file: File)(content: String): Unit = {
+                            
+                            IO.write(file, content + "\n")
+                            }
+                            buildContent match {
+                              case Right((content, _)) => writeBuildFile(buildFile -> content)
+                              case Left(errors) =>
+                              System.err.println("Could not generate SBT build file:\n" + errors.mkString("\n"))
+                              
+                              throw new BuildException(
+                                s"""|Unable to generate SBT build definition for $moduleName:$version
+                                |$scalaVersion
+                                |Reason:
+                                |${errors.mkString("", "\n", "")}
+                                |""".stripMargin)
+                                }
+                                
+                                }
+                                /** Generates a `Project` instance for the given module and version combination.
+                                val baseDir = file(".") / "sbt-plugin"
+                                val buildFile = baseDir / "project" / "Build.scala"
+                                createDirectory(baseDir)
+                                createDirectory(buildFile.getParentFile)
+                                writeBuildFile(buildFile)
+                                val uri = URI.create(s"git://github.com/scalajs-io/scalajs-
+                                io.git;protocol=http")
+                                addMappingsToAttribute(
+                                  AttributeKey[java.lang.Integer]("integrations"),
+                                  ((baseDir ** "*").get pair relativeTo(baseDir))
+                                  .filter(_._2.getName.endsWith(".js"))
+                                  .map { case (file, rel) =>
+                                    (uri.resolve(rel.toString), file)
+                                    },
+                                    100 // Higher priority than the default one
+                                    )
+                                    // Add a task that generates the `Build.scala` file on demand
+                                    // This is useful when developing and testing the plugin itself
+                                    // It's also useful in CI builds where we don't want to wait for
+                                    // GitHub to respond before publishing the artifacts
+                                    ++ TaskKey[Unit](
+                                      "generateBuildFile",
+                                      "Generate the `Build.scala` file from source code"
+                                      ) := Def.taskDyn {
+                                        if (isScalaJSPluginProject.value)
+                                        Def.task {}
+                                        else
+                                        Def.task {
+                                          val src = (sourceDirectory.value / "src")
+                                          val out = buildFile.getParentFile
+                                          GenerateSourceTask(src, out).value
+                                          println(s"Generated ${out.listFiles().toSeq}")
+                                          }
+                                          }
+                                          .dependsOn(compile in Compile)
+                                          */
+                                          /** The root project of this build. */
+                                          

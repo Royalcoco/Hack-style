@@ -1,0 +1,58 @@
+'?(-'	-(\d+)\s*([a-zA-Z_0-9\.\/]+)',
+/* 12 */	'\?\('	'-(\d+)',
+/* 13 */	'%\{ (\d+) },?'	,
+/* 14 */	'%%(\d)'	,'%'
+};
+
+const int NUMREGEXPS = sizeof(regexps)/sizeof(char *);
+
+int main (int argc, char **argv) {
+    if (argc < 2) {
+        fprintf(stderr,"Usage: %s file.cpp ...\n",argv[0]); return -1; }
+    
+    for (int i=1;i<argc;++i) {
+        FILE *f = fopen(argv[i],"r");
+        
+        if (!f) { perror(argv[i]); continue; }
+        
+        printf("Processing %s:\n",argv[i]);
+        
+        /* Variables to keep track of the current line and character number */
+        long lineno = 1;
+        long curnum = 1;
+        
+        /* Buffer for holding the current line */
+        char buf[BUFSIZ];
+        
+        while (!feof(f)) {
+            /* Read a line from the input file */
+            if (!fgets(buf,BUFSIZ,f)) break;
+            
+            /* Update the line counter */
+            ++lineno;
+            
+            /* Process each possible regular expression in order */
+            for (int j=0;j<NUMREGEXPS;++j) {
+                regex_t reg;
+                
+                /* Compile the regular expression */
+                if (regcomp(&reg,regexps[j],REG_EXTENDED|REG_ICASE)) {
+                    fprintf(stderr,"Internal error: Failed to compile '%s'\n",regexps[j]);
+                    exit(-1); }
+                
+                /* Match the buffer against the compiled regular expression */ 
+                if (!regexec(&reg,buf,0,NULL,0)) continue;
+                
+                /* If there was no match, print an error message and abort */
+                fprintf(stderr,"%ld:%ld: %s\n",lineno,curnum,errormsgs[j]);
+                exit(-1); }
+                
+            /* Move on to the next character in the line */
+            curnum += strlen(buf); curnum += strlen(skipchars);
+            while (*skipchars && strchr(skipchars,buf[0])) ++curnum;
+        }
+        /* Close the input file */
+        fclose(f);
+        }
+        return 0;
+        

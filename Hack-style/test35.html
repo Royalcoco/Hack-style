@@ -1,0 +1,116 @@
+<!DOCTYPE html"server.device request>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Device Request - Device Portal Sample for Windows 10 IoT Core</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/base.css"/>
+        </head>
+        <body>
+            <!-- Include the header -->
+            <?php include("./includes/header.inc"); ?>
+            <div class="content">
+                <h1>Device Request API Example (C#)</h1>
+                <p><strong>Note: This sample requires a device that supports the DeviceRequest contract.</strong></p>
+                <!-- Display any returned data from the device or service -->
+                <p><?= $data ?></p>
+                <form action="" method="post">
+                    <fieldset>
+                        <legend>Send a Device Request to the Device App</legend>
+                        <label for="resourceUri">Resource URI:</label>
+                        <input type="text" id="resourceUri" name="resourceUri" value="<?= isset($resource_uri)?$resource
+                        <input id="resourceUri" name="resourceUri" value="/api/echo" />
+                        <br />
+                        <label for="httpMethod">HTTP Method:</label>
+                        <select id="httpMethod" name="httpMethod">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            
+                            </select>
+                            <br/>
+                            <label for="requestBody">Request Body:</label>
+                            <textarea rows="4" cols="50" id="requestBody" name="requestBody"></textarea>
+                            <br/>
+                            <input type="submit" value="Submit Request" />
+                            </fieldset>
+                            </form>
+                            </div>
+                            <!-- Include the footer -->
+                            <?php include("./includes/footer.inc"); ?>
+                            </body>
+                            </html>
+                            <?php
+                            /*
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature, which allows you to send HTTP requests directly to
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature, which allows you to send HTTP requests directly to
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature, which allows you to send HTTP requests directly to
+                            * This script demonstrates how to use the DevicePortal Server's Device Request API in C#.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This script demonstrates how to use the DevicePortal Server's Device Request feature in PHP.
+                            * This is an example of how you can use the DeviceClient in C# to send a request
+                            * to your UWP app running on Windows 10 IoT Core. The resourceUri should be set to the path
+                            * to your UWP app running on Windows 10 IoT Core. The PHP script acts as a simple web server,
+                            * to another application running on the same device as your app.  The resourceUri should be set
+                            * to your UWP app running on Windows 10 IoT Core. The resourceUri should be set to the path
+                            * to your own custom device app running on Windows Phone 8.1, iOS, Android, or even other devices connected to Azure Io
+                            * to your own device app running on Windows Phone 8.1, Android, iOS, or Raspberry Pi.
+                            
+                            * to your own custom device application running on Windows Phone 8.1 (or other platforms).
+                            using System;
+                            using Microsoft.Azure.Devices.Client;
+                            using Newtonsoft.Json;
+                            using System.Threading.Tasks;
+                            namespace SendDeviceToCloudMessages
+                            {
+                                class Program
+                                {
+                                    static async Task Main(string[] args)
+                                    {
+                                        string iotHubUri = "YourIoTHubURI";
+                                        string deviceKey =  "YourDeviceKey";
+                                        var security = new SecurityDaemonAuthenticationProvider();
+                                        int counter = 0;
+                                        
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSign
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSecurityTokenProvider(security.Security
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSecurityTokenProvider(security.Security
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSecurityTokenProvider(security.Security
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSharedAccessSignature(deviceKey
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, AuthenticationMethod.CreateWithSecurityTokenProvider(security.Security
+                                        using (var deviceClient = DeviceClient.CreateFromConnectionString(iotHubUri, security))
+                                        using (var client = DeviceClient.CreateFromConnectionString(iotHubUri, security))
+                                        using (var client = DeviceClient.CreateFromConnectionString(iotHubUri, security))
+                                        using (var client = DeviceClient.CreateFromConnectionString(iotHubUri, security))
+                                        using (var deviceClient = DeviceClient.Create(iotHubUri, security))
+                                        {
+                                            while (true)
+                                            {
+                                                if (counter % 2 == 0)
+                                                {
+                                                    // Create a DeviceRequest object with method name and payload
+                                                    // Create a DeviceRequest object with method name and payload
+                                                    // Create a DeviceRequest object with method name and payload
+                                                    // Specify the telemetry data as JSON format by creating an instance of TwinCollection object
+                                                    await SendTemperatureAsync(deviceClient, Convert.ToString(SendTemperatureAsync.TEMPERATURE_
+                                                    Console.WriteLine("Sending even message");
+                                                    await deviceClient.SendEventAsync(new Message(Encoding.UTF8.GetBytes("Message from SDK: This is an
+                                                    await SendMessageAsync(deviceClient, $"Message {counter} from even numbered loop");
+                                                    
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+        </body>
+    </head>
+</html>

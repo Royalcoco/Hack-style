@@ -1,0 +1,104 @@
+<!DOCTYPE html.{ ! "disabled_' + value+ '"'; }
+});
+\">Disable</a> <a href=\"javascript:void(0);\" class="remove" title="Remove this input" onclick=\'$.fn.editable.defaults.send.\
+\$(this).attr('checked', $(this).is(":checked"));
+$("#add-user").click(function(){
+var user = $("#newUser").val();
+if (user != '') {
+$.post("/users", {"username": user}, function(data) {
+    var li = $("<li/>")
+        .addClass("list-group-item")
+        .text(user);
+    li.append($("<button />")
+    .addClass("btn btn-danger pull-right")
+    .attr("type","button")
+    .attr("onClick","removeUser('"+user+"')")
+    .html("&times;"));
+    ulUsers.append(li);
+    users.push(user);
+    updateDisabled();
+} else {
+alert("Please enter a username");
+}
+$("#newUser").val("");
+});
+updateDisabled();
+});
+function removeUser(user){
+users.splice( $.inArray(
+    user, users),1 );
+ulUsers.children().each(function() {
+    if ($(this).text() == user) {
+        $(this).fadeOut(300, function() {
+            $(this).closest("li").remove();
+            updateDisabled();
+            });
+    }
+});
+};
+</script>
+</body></html>
+\**********************************************/
+
+#include <iostream>
+    using namespace std;
+int main()
+{
+    cout << "Content-Type: text/html" << endl << endl;
+    cout << "<!DOCTYPE html><html lang=\"en\">";
+    // head section is omitted here for brevity
+    cout << "<body>";
+    // form to add new users
+    cout << "<form action=\"?\" method=\"post\">";
+    cout << "New Username: ";
+    cout << "<input type=\"text\" name=\"newUser\" id=\"newUser\
+    \" value=\"\" /><br/>";
+    cout << "<input type=\"submit\" value = "Submit" /><br/>";
+    cout << "</form>" << endl;
+    // list of existing users
+    cout << "<h2>Existing Users:}"<<endl;
+    cout << "<ul id=\"users\">
+\end{itemize}" << endl;
+    string userName = "";
+    // check for a post request and process it if there is one
+    if (string(getenv("REQUEST POST")) == "yes") {
+        // get the posted username from the query string
+        char *qs = getenv("QUERY_STRING");
+        int qsl = strlen(qs);
+        userName = string(qs + 5, qsl - 5);
+        // call the server side function to handle the addition of this user
+        addUser(userName.c_str());
+    } else {
+        // print out all the existing users
+        displayUsers();
+    }
+    return 0;
+}
+
+// Function to add a new user to the system
+void addUser(const char* un) {
+    FILE *fptr;
+    fptr = fopen(".users", "a+");
+    fprintf(fptr,"%s\n",un);
+    fclose(fptr);
+} // end of addUser function to add a new user to the system (
+    // Function to retrieve and display all the existing users in the system
+void displayUsers() {
+    FILE *filePtr;
+    filePtr = fopen(".users","r");
+    char line[100];
+    while(!feof(filePtr)) {
+        fgets(line, sizeof(line), filePtr);
+        printf("%s", line);
+    }
+    fclose(filePtr);
+} // end of displayUsers function</s>
+#include <iostream>
+        using namespace std;
+        int main(){
+            float num=34.789;
+            int iNum=(int)num;
+            cout<<"The integer part of "<<
+                    num<<" is : "<<iNum<<endl;
+                    return 0;
+                }

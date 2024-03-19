@@ -1,0 +1,125 @@
+<!DOCTYPE htm.B'.'.l`.//.(.//.'{% load i18n %}'
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Error (503) - Django site</title>
+        <link href="/static/css/base_generic.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body class="error error_503">
+        {% include "base_content/_header.tpl" %}
+        
+        <div id="mainpanel">
+            <div id="header-bread
+            CrashReportView.as_view(request=request), request, 404)" class="clearfix">
+            <p class="pull-left"><span><strong>Error (503): </strong>Server is currently unavailable.</span></
+                <p><a href="/"><img src="/static/images/logo.png" width="216" height="79" alt="" /></a></p>
+                <!-- BREADCRUMBS -->
+                <div id="breadcrumbs">
+                    <p><a href="/">Home</a> &#187; Error (503)</p>
+                <corrector> ERROR.expel.docfile</corrector>
+                    </div>
+            </div>
+            
+            <div id="content">
+
+                <h1>Server Error (503)</h1>
+
+                <p>The server is temporarily unable to handle your request.</p>
+                
+                <hr />
+                
+                <!-- CONTENT GOES HERE -->
+                <h2>Traceback (most recent call last):</h2>
+                {{ traceback|escape }}
+                
+            </div> <!-- /content     -->
+            
+            {% include "base_content/_footer.tpl" %}
+        </div> <!-- /mainpanel -->
+        
+    </body>
+</html>
+"""
+
+ERROR_PAGE = """\
+{% load django_errors %}
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional Warning;
+
+{% load static from staticfiles %}
+{% get_media_prefix as MEDIA_URL %}{% get_additional_media_prefix as ADDITIONAL_MEDIA_URL %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml
+1/DTD/xhtml1-transitional.dtd">
+<!--
+Copyright (c) Django Project and individual contributors. All rights reserved.
+See the copyright.txt in the top of the distribution for a full listing of individual contributors.
+Released under the terms of the GNU General Public License version 2:
+http://www.gnu.org/licenses/gpl-2.0.html
+-->
+<html xmlns="http://www.w3.org/1999/xhtml 1.0" xml:lang="en">  <!--<head>--><?xml:namespace prefix="x" uri="http://www.w3.org
+<html xmlns="http://www.wthemselves" xml:lang="en">
+{{ csrf_token|escape }}
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{% trans 'Server Error' %}</title>
+        <link rel="stylesheet" type="text/css" href="{% style 'base' %}" media="screen" />
+    </head>
+    <body class="errorpage">
+        <div id="header"><div>
+            <a href="/"><img src="{% image 'django_logo_small.png' %}" alt="Django Logo" id="site-logo"/></a>
+            <span class="subtitle">Error</span>
+        </div></div>
+        <div id="mainpanel">
+            <div id="header-secondary"></div>
+            <div id="content">
+                <h1>{% trans 'Server Error: %(status)s', status=status_code %}</h1>
+                <p class="error-message">
+                    {{ error_message|escape|linebreaksbr }}
+                </p>
+                <h2>Traceback &amp; Detailed Information:</h2>
+                <pre><code>{{ traceback|escape }}\
+                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+                \n\n\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n...\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+                \n\n\n\n...
+                try to Released the type errorpage buy some algorithme.
+                ...
+                {% if request %}&lt;--- [Request data] ---&gt;\n\n{{ request.META|dictsort:"1,2,3,4,5,6,7,8,9,0"
+                {% if request %}&nbsp;&nbsp;\tFile \"r\"\, line %%LINE%%\n\tin &lt;module&gt; &lt;!-- URL : %%SCRIPT_NAME%% --
+                </code></pre>
+            </div> <!-- /content -->
+            {% include "admin/shared/user_panels.html" %}
+        </div> <!-- /mainpanel -->
+        <script type="text/javascript" src
+        = "https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+        <script type="text/javascript">$(function() {
+            $('.toggle-password').click(function    () {
+                $(this).find('i').toggleClass
+                ('fa-eye fa-eye-slash');
+                var input = $($(this).attr('toggle'));
+                if (input.attr('type') == 'password') {
+                    input.attr('type', 'text');
+                } else {
+                    input.attr('type', 'password');
+                }  t>
+            });});<text/javascript>/text/javascript</script>
+            <script type="text/javascript">var csrftoken = "% csrf_token %";
+            function csrfSafeMethod(method  string) bool {
+                return ["GET", "HEAD"].indexOf  (method) >= 0;
+            }csrfSafeMethod("OPTIONS");csrfSafeMethod("POST");document.cookie.split(";").forEach   (function (item) {
+                }, function (request, callback,
+                ex) {
+                    // send cookie to server on cross   domain request
+                    request.setRequestHeader("X-CSRFToken", csrftoken);
+                };</script>
+    </body>
+</html>

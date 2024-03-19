@@ -1,0 +1,380 @@
+<!DOCTYPE html ')
+@charset "UTF-8";/*!
+* Bootstrap v4.5.2 (https://getbootstrap.com/)
+* Copyright 2011-2020 The Bootstrap Authors
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+*/:root{--blue:#0d6efd;--indigo:#6610f2;--purple:#6f
+    // Variables and Mixins
+    // --------------------------
+    @function strip-unit($value) { @return $value / ($value * 0 + 1); }
+    @function add-unit($value, $unit: null) { @if type-of($value) == number and not $unit {
+        @return unit($value / 1, $unit);
+        } @else { @return $value / 1; } }$ease:"cubic-bezier(.4, 0
+        , .2, 1)";$duration:150ms;"important":!global;$null:null;$scheme
+        :(light: #fff [#f8f9fa] dark: #343a40 [#2125
+        29]);$gray:(100: #f8f9fa, 200: #e9ecef,
+        300: #dee2e6, 400: #ced4da, 500: #adb
+        5c, 600: #6c757d, 700: #495057,
+        800: #343a40, black: #212529);$fontFamily: Nunito
+        
+        ,"Noto Sans", "Lato", "Roboto", "Helvetica Neue", Arial, sans-serif;$display
+        : block;$display-sm: display(flex);$d-none: none;$visibility-hidden: visibility(hidden);$
+        visibility-visible: visibility(visible);$position-absolute: absolute;$position-fixed: fixed;$position-relative: relative;
+        visibility-visible: visibility(visible);$position: absolute;$top: auto;$right: auto;$bottom: auto;$
+        left: auto;$z-index-auto: auto;$z-index-0: 0;$z-index-1
+        : 1;$z-index-2 : 2;$z-index-3 : 3;$z-index-
+        10 : 10;$float: right;$clear: both;$arrow
+        : ([class*="arrow"] &::before){content: ""}.arrow
+        &[data-popper-placement^=top]:
+        .data.power ':{{ {% if //github.com/twbs/bootstrap/blob/main/LICENSE %}{% endif %}|default:"" }}'
+        "";}$body-bg: transparent;$body-color: #343a40;$link-color: blue;$
+        link-color-hover: #6610f2;$link-decoration: none;$link-color-
+        active: #6610f2;$link-color-focus: #6610f2;$text-m
+        uted: #6c757d;$text-primary: #0d6efd;$text-secondary: #
+        6c757d;$text-success: #198754;$text-info: #0dca
+        f0;$text-warning: #ffcd32;$text-danger: #dc3545;$white
+        : #fff;$black: #000;$opacity-0: 0;$opacity-25: .25
+        ;$opacity-50: .5;$opacity-75: .75;$opacity-100: 1
+        ;@media (print):{*, ::after, ::before{-webkit-print-color-adjust: exact;}::-webkit-
+        print-color-adjust:-webkit-print-color-adjust:exact}*{box-sizing: border-box}:
+        font{$family:$fontFamily;$-weight:[normal, bold]=("
+        b","strong")&&\:not([class\*="font-\w"])&&\:not(\[class\*=\
+        "font-\w"]){font-weight:bold}&&\:not([class~="text-\w"])&&\:not(\[
+        class~="text-\w"]){line-height: 1.25em}\+
+        html\:root\:lang\(zh\) \:\:not\(:has\(:lang\(en\)\))\:
+        has\(:lang\(en\)\) \{\&\{font-family:Nunito, "PingFang SC", "
+        Microsoft YaHei", "Source Han SansCN", "Noto Sans CJK
+        SC", "Noto Serif CJK SC", "WenQuanYi Micro Hei", "Apple LiSong
+        Pro", "Droid Fallback", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Fira Sans", "Open Sans", "Helvetica Neue", Arial, sans-serif\}}@
+        keyframes\:rotate{\from{transform:rotate(0deg)}\to{transform:rotate(1turn)}}@keyframes\:
+        fade{\from{opacity:0}\to{opacity:1}}\:root\:hanging\{\&-sm\:
+            hanging\(.\){\-\@screen-sm\:hanging\(.\)/\&-md\:hanging\(.
+                \)/\&\/&-lg\:hanging\(.\)\}\&-md\:hanging\(@utilities\.respons
+                iveness\()\)\{\-\@media\:(min-width:\:@screen-md)\:\:hanging\(.\)/
+                    /\&-lg\:hanging\(.\)\}\&-lg\:hanging\/*}@supports\:(--css
+                    -container:size)\{:where(*\{-webkit-box-sizing:border-box;box-sizing:border-box
+                        }\:not\(:is\(article,\:is\(section,\:is\(aside,\:is\(nav
+                        )\).)))\&-fluid\:fluid\(/\, *\:not\(&-fluid)
+                        \)\{\-\@apply\:container\:px\:0\}@variants\:prose{\&\:pro
+                            se\:none\/\&-prose-\:sm\:prose-sm\/\&-prose-md
+                            \:prose-md\/\&-prose-lg\:prose-lg\/\&-prose-xl
+                            \:prose-xl\/}\n\n/*!
+                            * Bootstrap v5.1.3 (https://getbootstrap.io/)
+                            */@import url('data:application/octet-stream;base64,R0lGODlhAQAB
+                            
+                            AAIAAACMtMP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') as
+                            fonts from './fonts.js';html{font-
+                                family:var(--bs-font-sans)-"Proportional Numbers"
+                                ,"Gill Sans", "Gill Sans MT", Calibri, sans-serif;\
+                                line-height: 1.5}.antialiased\:antialiased{
+                                    >*\:not(svg):not([viewBox])\:not(text\:uppercase)\:
+                                    not(text\:lowercase)\:not(text\:capitalize)\:
+                                    not(-webkit-text-stroke)\:not(text\:decoration-
+                                    underline)\:not(text\:decoration-line-through){-webkit-
+                                        font-smoothing: antialiased;-moz-osx-font-smoothing:
+                                        antialiased;text-rendering: optimizeLegibility},
+                                        .subpixel-antialiased\:subpixel-antialiased>* {
+                                            font-feature-settings:"ss01";font-variant-numeric:
+                                            lining-nums;font-variant:
+                                            none}\nbody{margin:
+                                                0}[role=img]{max-width:
+                                                    100%\/**}\n/*!
+                                                    * Bootstrap
+                                                    
+                                                    * https://getbootstrap.io/
+                                                    */@apply
+                                                    min-h-screen flex flex-col
+                                                    justify-center pt-6 pb-8
+                                                    bg-white sm:pt-0
+                                                    sm:pb-12 sm:flex-row
+                                                    relative z-0
+                                                    dark:bg-gray-900:-mt-28
+                                                    /* Prevent iOS text area resizer */
+                                                    resize: none
+                                                    /* Apply cursor styles to textareas for idioms: http://www.whatwg.org/specs
+                                                    /* Hack to fix a bug in FF where the body isn't being scrolled on mobile */*, ::after, ::
+                                                    /* Hack to fix a bug in FF where the body isn't being scrolled on mobile */*, ::after, ::
+                                                    /* Apply cursor styles to textareas for idiots */
+                                                    ::selection{background-color:transparent}::-webkit-scrollbar{
+                                                        
+                                                        ::selection{background-color:transparent}::-moz-selection{background-color:transparent,dark:in
+                                                            &::before {\_:content \"\"}:isolation:
+                                                            isolation-ugly\n\n/* Clipboard
+                                                            and Overlay Color */clipboard-color:\
+                                                            
+                                                            rgba\(59, 132, 246, .25);overlay-color:\
+                                                            rgb\(59, 132, 246, .9)\}/deep/code[class
+                                                            *=language-text], pre[class
+                                                            *=language-text]{\n\tbackground: transparent;border-radius: 8px;padding: .75
+                                                                *=language-text]{\
+                                                                    max-width: initial}pre{\
+                                                                        
+                                                                        tab-size: 8}.container\n\n\
+                                                                        \_\:focus\_{outline: 2px auto -webkit-focus-ring-color/\
+                                                                            \_\:focus{-webkit-\
+                                                                                :ring-offset\
+                                                                                
+                                                                                \:ring-opacity\
+                                                                                \:ring-color\
+                                                                                
+                                                                                \:ring\
+                                                                                \:ring-offset\
+                                                                                \(dark\):ring-color\
+                                                                                dark:none\/\*\
+                                                                                @apply mx-auto*/\n\n& > div {\
+                                                                                    @apply mx-auto*/\n\n& > div {\
+                                                                                        @apply mx-auto*/\n& > div {flex: 1}}\n\n#app{\
+                                                                                            @apply mx-auto*/\n& > div {grid\
+                                                                                                @apply mx-auto*/\n\n& > div {grid-column: 1 / span
+                                                                                                    Scrollable Container\*/.container-scroll{height: 100vh;overflow-y: auto
+                                                                                                        Scrollbar Styles \*/::-webkit-scrollbar{height: 7px;background: transparent\/\*
+                                                                                                            Use a backdrop filter on the code block so it doesn't become a first class citizen when copied to clip
+                                                                                                            Scrollbar Styles\
+                                                                                                            Hide scrollbar when not
+                                                                                                            Hide scrollbar when not
+                                                                                                            Hide scrollbar when not
+                                                                                                            Hide scrollbar when not
+                                                                                                            Hide scrollbar when not
+                                                                                                            Hide scrollbar when not
+                                                                                                            Scrollbar Styles \*/.markdown-body::-webkit-scrollbar{--tw-shadow:/*!
+                                                                                                                
+                                                                                                                Hide scrollbar when not
+                                                                                                                
+                                                                                                                Specify the font used for code snippets.\
+                                                                                                                Make code blocks look like they are part of the page so you can select them without having to scroll past them.\*/
+                                                                                                                Make code blocks look like normal text\*/.code{font-family: inherit;white-space: nowrap
+                                                                                                                    Specify the font used for code snippets.*/code{\
+                                                                                                                        Specify the font used for code snippets.
+                                                                                                                        Specify the font size of code blocks.*/code,\
+                                                                                                                        Specify the font size of code blocks.*/code,\
+                                                                                                                        Specify the font used for inline code\*/.code\
+                                                                                                                        @apply mx-auto p-4 sm:p-8 md:p-12 lg:pb-
+                                                                                                                        Specify the font family for text in all elements.\
+                                                                                                                        @apply text-gray-700 bg-white;\*/.font-mono {\
+                                                                                                                            @apply mx-auto p-4 sm:p-8;*/}\@screen\
+                                                                                                                            >div,\
+                                                                                                                            .code {\
+                                                                                                                                @apply\
+                                                                                                                                .code{\
+                                                                                                                                    .code\
+                                                                                                                                    .tab:\
+                                                                                                                                    .tab:\
+                                                                                                                                    :focus{box-shadow:\
+                                                                                                                                        .\31 2a0q\(dark\)\
+                                                                                                                                        .bg-black\/[\.\w-]+\/accent\(-\d\)*,\s?\
+                                                                                                                                        .group\[data-theme="dark"] & {[\s\S]*?}\r\n/g
+                                                                                                                                        .bg-black\/[^\}]+\/\)\\2\"\>/,
+                                                                                                                                        .bg-\[class\]:\
+                                                                                                                                        ",\
+                                                                                                                                        
+                                                                                                                                        
+                                                                                                                                        \.container\
+                                                                                                                                        /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */\n"
+                                                                                                                                        /*@apply flex items-center justify-between px-4 py-3 rounded-lg bg-white shadow-md dark:bg-
+                                                                                                                                        
+                                                                                                                                        /*! For more information please refer to https://tailwindcss.com */@apply flex flex-col h-screen bg-gray-1
+                                                                                                                                        /*:gap\(1rem\)*/ gap: 1rem;}\n@media \(min-width\:640px
+                                                                                                                                        /*! tailwindcss v2.2.4 | MIT License | https://tailwindcss.com */@media (min-width
+                                                                                                                                        }.container-scroll::-webkit-scrollbar{width: 6px;background-color: transparent}/*! scrollbar for firefox */
+                                                                                                                                        /*transparent*\/}::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px
+                                                                                                                                            // board. This is useful for sharing code snippets that include sensitive information, such as API keys or passwords.
+                                                                                                                                            //==============================================
+                                                                                                                                            body.is-loading * {
+                                                                                                                                                body.no-scroll::-webkit-scrollbar {
+                                                                                                                                                    body.no-scroll::-webkit-scrollbar {
+                                                                                                                                                        body.no-scroll::-webkit-scrollbar {
+                                                                                                                                                            body.is-loading * {
+                                                                                                                                                                body.is-loading * {
+                                                                                                                                                                    Tailwind CSS v2.1.4 | MIT License | https://tailwindcss.com
+                                                                                                                                                                    body.is-loading *, body:not(.is-loading) ::-webkit-scrollbar {
+                                                                                                                                                                        body.is-loading * {
+                                                                                                                                                                            (font-lock-builtin "Consolas" :group 'code)
+                                                                                                                                                                            (font-lock-builtin "Consolas" :group 'code)
+                                                                                                                                                                            display: none !important
+                                                                                                                                                                            }.highlight .hll {background:#ffff00}/*
+                                                                                                                                                                            font-family:monospace;\
+                                                                                                                                                                            css
+                                                                                                                                                                            pre{font-size:105%;}/*Specify the language for syntax highlighting.*/</s>*/\n" +
+                                                                                                                                                                            pre{font-size:105%;}/*Specify the language for syntax highlighting.*/</s>*/\n" +
+                                                                                                                                                                            {font-family:monospace,sans-serif;}\n" +
+                                                                                                                                                                            /*! tailwindcss v2.2.7 | MIT License | https://tailwindcss.com */*,::after,::before
+                                                                                                                                                                            /* {font-family: Arial, sans-serif;}*/.element {font-size: 14px;}
+                                                                                                                                                                            pre, code{\display: block;\overflow-x: auto;}
+                                                                                                                                                                            /*sm*/\:md{\.container{max-width:768px}}\@media(min-width:1024
+                                                                                                                                                                            /*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:
+                                                                                                                                                                                body:before, code:before {content:"";visibility:hidden;position:absolute}\
+                                                                                                                                                                                /*.scss \
+                                                                                                                                                                                /*
+                                                                                                                                                                                /*
+                                                                                                                                                                                .tabs{\display:flex;border-bottom:1px solid #ddd;padding:0}.tabs>*{\box-sizing
+                                                                                                                                                                                    .tabs{\display:flex;border-bottom:1px solid #ddd}.tabs--horizontal>.tabs__item{flex-direction:
+                                                                                                                                                                                        /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+                                                                                                                                                                                        .c{background-color:#1d1f21;border:none}.m{margin:4px}.p{padding:4
+                                                                                                                                                                                            /*.+/,*/i);
+                                                                                                                                                                                            .replace(/\{\\\"lang:(\w+)\\\":/g, '{% raw %}{% highlight $1 %}')
+                                                                                                                                                                                            /*! background-size: [string] */
+                                                                                                                                                                                            .bg-transparent\@media \(--sm\)\:dark{\.bg-\[class\]-\:dark\.bg-transparent
+                                                                                                                                                                                                "name":"test_table","columns":[{"name":"id","type":"int"},{"name":"value","type":"string"}],"
+                                                                                                                                                                                                .row{margin-bottom:10px;}
+                                                                                                                                                                                                .row{margin-left:0; margin-right:0;}
+                                                                                                                                                                                                .row{margin-left:0; margin-right:0}\
+                                                                                                                                                                                                },
+                                                                                                                                                                                                /* @apply text-gray-800 dark:text-white */
+                                                                                                                                                                                                :bg-white dark:(bg-black) font-sans text-base leading-normal antialiased;*,*::before,*
+                                                                                                                                                                                                :bg-white dark:(bg-black) font-sans;*,*::before,*::after{box-sizing:border
+                                                                                                                                                                                                    /*{margin-left\:auto;\nmargin-right\:auto/}*/ @media (min-width: 640
+                                                                                                                                                                                                    :1024px) {.sm\:rounded{border-radius:.5rem}.md\:rounded{-ms
+                                                                                                                                                                                                        .container-scroll::-moz-scrollbar{height: 10px}.container-scroll::-webkit-scrollbar-track{-
+                                                                                                                                                                                                            /*#78909c*/ rgba(120, 144, 156, 0.3);
+                                                                                                                                                                                                            border-radius: 10px}.container-scroll::-webkit-scroll
+                                                                                                                                                                                                            //  KFK_CONNECTOR_MULTI_THREAD_H__0715234996
+                                                                                                                                                                                                            -webkit-transition: none !important;
+                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                            display: none;
+                                                                                                                                                                                                            -webkit-transition: none !important;
+                                                                                                                                                                                                            -webkit-transition: none !important;
+                                                                                                                                                                                                            <"h.ref"> locked</h.ref>
+                                                                                                                                                                                                            display: none !important;
+                                                                                                                                                                                                            -webkit-transition: none !important;
+                                                                                                                                                                                                            (setq font-lock-global-face 'default)
+                                                                                                                                                                                                            
+                                                                                                                                                                                                            /*!
+                                                                                                                                                                                                            * Syntax highlighting style: github by wbond (http://github.com/wbond)
+                                                                                                                                                                                                            body{margin:1em;background:#fff}\
+                                                                                                                                                                                                            /*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
+                                                                                                                                                                                                            "lang: js;";
+                                                                                                                                                                                                            "{\n" +
+                                                                                                                                                                                                            /* 10 */".{margin:2em}.code{display:block;padding:.5em .8em;border-radius
+                                                                                                                                                                                                                margin:0
+                                                                                                                                                                                                                /*{margin: 0; padding: 0;}*/
+                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                pixels){/******Small devices (phones)*********/.sm\-\>sm\/md{.container,.navbar-collapse
+                                                                                                                                                                                                                    sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:
+                                                                                                                                                                                                                    .clearfix{*zoom:1}.clearfix:after,.clearfix:before{display:table;content:""}\
+                                                                                                                                                                                                                    \( -name "*.scss" ! -name "_*" \) | while read file; do \
+                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                    body:\box-sizing\block;float:left;margin:0}.tabs::before,\ntabs::after{\content:"";display
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text
+                                                                                                                                                                                                                        /*! normalize.css v7.0.0 | MIT License | git.io/normalize */html{font-family:"
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        // 	.replace(/\"\}/g, '%}');
+                                                                                                                                                                                                                        /*! Specifies the size of the background image. See Can I use? for browser support information.*/
+                                                                                                                                                                                                                        background-color: transparent !important}*,::after,::before{-webkit-box-sizing:border-box; box-s
+                                                                                                                                                                                                                            // CHECK-NEXT:   "rows":[[1,null],[2,"hello"]]}}' | ./json_verify.py
+                                                                                                                                                                                                                            .col-xs-6{padding-left:5px; padding-right:5px;}@media (min-width:99
+                                                                                                                                                                                                                            .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 { float:
+                                                                                                                                                                                                                                .container{max-width:1280px; padding-left:15px; padding-right:15px; margin
+                                                                                                                                                                                                                                    body {
+                                                                                                                                                                                                                                        /* @apply font-medium */
+                                                                                                                                                                                                                                        /*::after*/{box-sizing:border-box}body,html{font-family:"Source Sans Pro",sans-ser
+                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                        /*px*/) {.container{\nmax-width\:\d+rem/\}}@media \(min-device-pixel-rat
+                                                                                                                                                                                                                                        -transform:translateZ(0);transform:translateZ(0)\@apply .md\:rounded}}@media (min-width
+                                                                                                                                                                                                                                        body.dark &, body.light & {background-color:#fafafa;border:1px solid #d4d4d
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            body.modal-open .container-scroll{overflow:hidden}@media (min-width:768px){.d-md
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                <h.secno>10</h.secno></s>
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                (setq font-lock-comment-face 'font-lock-comment-face)
+                                                                                                                                                                                                                                                @file
+                                                                                                                                                                                                                                                @file
+                                                                                                                                                                                                                                                // @author https://github.com/mysterycommand
+                                                                                                                                                                                                                                                .container{max-width:60rem;padding:1em;border:2px solid #ccc;box-shadow:0
+                                                                                                                                                                                                                                                    (function(t,e){"object"==typeof module&&"undefined"!=typeof module?module.exports=e():"function"
+                                                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                                                    //                    "\t\"version\": \"1.0\",\n" +
+                                                                                                                                                                                                                                                    :4px;font-size:90%;line-height:1.6}pre code{white-space:nowrap}"],
+                                                                                                                                                                                                                                                    /*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:"
+                                                                                                                                                                                                                                                    /*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:
+                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                        {max-width:750px;margin:auto}}@media(min-width:992px)\/\*medium devices
+                                                                                                                                                                                                                                                        body{margin:0}#content{width:658px;height:auto;float:left}.clearfix{*zoom
+                                                                                                                                                                                                                                                            .clearfix:after{clear:both}/*!
+                                                                                                                                                                                                                                                            dir=$(dirname "$$file"); \
+                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                            /*:table*/:table;\fatsz:.75em;font-family:Arial,Helvetica,sans-
+                                                                                                                                                                                                                                                            body{margin:8px}h1{font-size:2em;margin:.67em 0}.h1 small{
+                                                                                                                                                                                                                                                                body,article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display
+                                                                                                                                                                                                                                                                    sans-serif";line-height:1.15;-webkit-text-size-adjust:100%;-
+                                                                                                                                                                                                                                                                    body { font-family: Arial, sans-serif; }
+                                                                                                                                                                                                                                                                    // }
+                                                                                                                                                                                                                                                                    backgroundSize?: BackgroundSizeType;
+                                                                                                                                                                                                                                                                    body-sizing:border-box}.clearfix:after{content:""; display:block; clear:both}.hidden{display:none
+                                                                                                                                                                                                                                                                        #
+                                                                                                                                                                                                                                                                        /*.row*/4px){.col-xs-6{-ms-flex-preferred-size:0; -webkit-flex-
+                                                                                                                                                                                                                                                                            /*! width: 8.33333%; */width: 8.33333vw; /* 1
+                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                            /*!
+                                                                                                                                                                                                                                                                            .font-medium {
+                                                                                                                                                                                                                                                                                /*! source-sans-pro v2.019 - [License](http://www.google.com/fonts/
+                                                                                                                                                                                                                                                                                io:1\.5),\(min-resolution:144dpi/){.container{font-size\:.87
+                                                                                                                                                                                                                                                                                    io:1\.4),\(min-resolution:.\{30\/16\}\dpcm/);
+                                                                                                                                                                                                                                                                                    /*:root{--tw-font-family-sans:ui-sans-serif,system-ui,-apple-system,
+                                                                                                                                                                                                                                                                                        }body.dark &{color:#fff}.light &{color:#333}.bold &{font-weight:700}.
+                                                                                                                                                                                                                                                                                        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                                                                                        -none{.col,.col-xs-12,.col-sm-6,.col-md-4,
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            @file
+                                                                                                                                                                                                                                                                                            <section class="container">
+                                                                                                                                                                                                                                                                                                body { margin: 0; padding: 0; font-family: Arial, sans-serif;}
+                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                (add-hook 'c++-mode-hook
+                                                                                                                                                                                                                                                                                                /*!
+                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                import { assert } from 'chai';
+                                                                                                                                                                                                                                                                                                /*rgba(0, 0, 0, 0.3)*/}@media (min-width:480px
+                                                                                                                                                                                                                                                                                                ==typeof define&&define.amd?define([],e):"undefined"!=typeof window?window.Vue=e():global.V
+                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                //                    "\t\"encoding\": \"UTF-8\",\n" +
+                                                                                                                                                                                                                                                                                                "code[class*='language-']": {
+                                                                                                                                                                                                                                                                                                    Segoe UI",Frutiger,Helvetica,Arial,sans-serif;-ms-text-size-ad
+                                                                                                                                                                                                                                                                                                    sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:
+                                                                                                                                                                                                                                                                                                    /*{body.container{max-width:960px}.row>.col-md-8,.row>[class^="col-
+                                                                                                                                                                                                                                                                                                    /*\*/{html,body{\font-family:"Open Sans","Helvetica Neue",Arial,sans-serif}.container
+                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                    @import url(https://fonts.googleapis.com/css?family=Roboto);*/*::-webkit-input-placeholder,:-
+                                                                                                                                                                                                                                                                                                    echo "Making $$target in $$dir"; \
+                                                                                                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                    font-size .5em
+                                                                                                                                                                                                                                                                                                    /*:block*/}body{font-family:sans-serif;line-height:1.4285714
+                                                                                                                                                                                                                                                                                                        moz-osx-font-smoothing:grayscale;-ms-
+                                                                                                                                                                                                                                                                                                        /* Style the tab */
+                                                                                                                                                                                                                                                                                                        //
+                                                                                                                                                                                                                                                                                                        /**
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                        basis:50%; flex-basis:50%}.col-sm-3{-ms-flex-preferred-size:
+                                                                                                                                                                                                                                                                                                            */}@media (min-width:42em){/*! float: left; */float:left; /* 2
+                                                                                                                                                                                                                                                                                                                @file
+                                                                                                                                                                                                                                                                                                                @file
+                                                                                                                                                                                                                                                                                                                /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                rem;line-height\:1\.2}}@media screen and \(max-width\:\:600px\){\.
+                                                                                                                                                                                                                                                                                                                    /*! normalize.css v7.0.0 | MIT License | git.io/normalize */html{line-height:
+                                                                                                                                                                                                                                                                                                                        /*! Roboto */"Roboto", "Noto Sans", "Noto Color Emoji", sans-serif;--tw-
+                                                                                                                                                                                                                                                                                                                        h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1{
+                                                                                                                                                                                                                                                                                                                            .w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                                                                                                                                                                                                                                                                                                                            .row{margin:0;padding:0}.container{max-width:980px;margin:auto;padding:0}
+                                                                                                                                                                                                                                                                                                                            /*!
+                                                                                                                                                                                                                                                                                                                            /*!
+                                                                                                                                                                                                                                                                                                                                

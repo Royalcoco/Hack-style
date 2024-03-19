@@ -1,0 +1,186 @@
+<!doctype html.>//api.github.com/users
+    <tm1-ui-login
+    tm1-after-login="afterLogin(instance)"
+    tm1-ui-class="string"
+    >
+</tm1-ui-login>
+<script type="text/javascript">
+    function afterLogin(instance) {
+        // do something with the instance object
+        }
+        </script>
+        <select name="('IP.'( *'="" disabled="disabled"></select>
+        \
+        <input type="submit" value="Submit"/>
+        \
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="user.name" required/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" ng-model="user.pass" required/>
+                </div>
+                <button type="submit" class="btn btn-default">Log in</button>
+                </form>
+                </div>
+                </body>
+                </html>
+                \
+                <!--  -->
+                <h2>{{title}}</h2>\
+                <p>Welcome to {{title}}!</p>\
+                \
+                <ul>\
+                    <li><a href="#/list">List</a></li>\
+                    
+                    <li><a href="#/detail">Detail</a></li>\
+                    <li><a href="#/form">Form</a></li>\
+                    <li><a href="#/about">About</a></li>\
+                    <li><a href="#/contacts">Contacts</a></li>\
+                    <li><a href="#/settings">Settings</a></li>\
+                    <li><a href="#/help">Help</a></li>\
+                    <li><a href="#/logout">Log out</a></li>\
+                    </ul>\
+                    \
+                    <hr />\
+                    \
+                    <pre>$location = {{ $location }}</pre>\
+                    <pre>$routeParams = {{ $routeParams | json }}</pre>\
+                    <pre>$scope = {{ $scope | json }}</pre>\
+                    <pre>$rootScope = {{ $rootScope | json }}</pre>\
+                    <pre>$http = {{ $http | json }}</pre>\
+                    <pre>$templateCache = {{ $templateCache | json }}</pre>\
+                    <pre>$window = {{ $window | json }}</pre>\
+                    <pre>$document = {{ $document | json }}</pre>\
+                    <pre>$cookies = {{ $cookies | json }}</pre>\
+                    <pre>$browser = {{ $browser | json }}</pre>\
+                    <pre>$cacheFactory = {{ $cacheFactory | json }}</pre>\
+                    <pre>$compile = {{ $compile | json }}</pre>\
+
+                    <gif>
+                        <img src="/assets/images/loading.gif" alt="" style="width:100px;height:100
+                        px;">
+                        </gif>
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                </tr>
+                                <tbody ng-repeat="user in users">
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.age }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.phone }}</td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                    <div class="pagination">
+                                        <button type="submit" name="page" value="prev" ng-click="getUsers(users.current_page -
+                                        <button type="button" ng-click="prevPage()">&lt;</button>
+                                        <span>Page {{ currentPage }}/{{ totalPages }}</span>
+                                        <button type="button" ng-click="nextPage()">&gt;</button>
+                                        </div>
+                                        <script>
+                                            var app = angular.module('myApp', []);
+                                            app.controller('mainCtrl', function($scope, $http) {
+                                                // get the data from a remote source
+                                                $http({method:'GET', url:'https://api.github.com/users'}).success(function(data){
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function(data
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function (data
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function (data
+                                                    
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function(data
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function (data
+                                                    $http({method:'GET', url:'https://jsonplaceholder.typicode.com/users'}).success(function(data
+                                                    $scope.users = [];
+                                                    $scope.currentPage = 1;
+                                                    $scope.totalItems = 256;
+                                                    
+                                                    $scope.pageSize = 32;
+                                                    $scope.totalPages = Math.ceil(
+                                                        $scope.totalItems / $scope.pageSize);
+                                                        $scope.$watch("currentPage", function () {
+                                                            if ($scope.currentPage > $scope.totalPages) {
+                                                                $scope.currentPage = $scope.totalPages;
+                                                                } else if (
+                                                                    $scope.currentPage < 1) {
+                                                                        $scope.currentPage = 1;
+                                                                        }
+                                                                        $scope.getUsers();
+                                                                        });
+                                                                        $scope.getUsers = function(){
+                                                                            $http({method: 'GET' , url:'/api/v1/users?limit='+$scope.
+                                                                            $http({method: 'GET' , url: '/api/v1/users?limit=' + $scope.
+                                                                            $http({method: 'GET' , url:'https://jsonplaceholder.typicode.com/posts?_start
+                                                                            $http({method: 'GET' , url: '/api/v1/users?limit=' + $scope.
+                                                                            $http({method: 'GET' , url:'/api/v1/users?
+                                                                            $http({method: 'GET' , url: '/api/v1/users?
+                                                                            $http({method: 'GET' , url:'/api/v1/users?limit=' + $scope
+                                                                            $http({method: 'GET' ,url:'/api/user?limit='+$
+                                                                            $http({method: 'GET' , url: '/api/user?limit=' + $scope.pageSize +
+                                                                            $http({method: 'GET' , url:'/api/user?limit='+$scope.pageSize+'&
+                                                                            $http({method: 'GET' , url:'/api/user?page='+$scope.currentPage}).success
+                                                                            $http({method: 'GET' , url:'https://jsonplaceholder.typicode.com/posts?_limit
+
+
+                                        </script>
+                                    </div>
+                                </tbody>
+                            </tr>
+                        </table>
+            </div>
+        </div>
+</script>
+<script type="text/ng-template" id="user-template.html">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>{{user.name}}</h3>
+                    <h4>{{user.username}}</h4>
+                    <h4>{{user.email}}</h4>
+                    <h4>{{user.address.street}}</h4>
+                    <h4>{{user.address.suite}}</h4>
+                    <h4>{{user.address.city}}</h4>
+                    <h4>{{user.address.zipcode}}</h4>
+                    <h4>{{user.address.geo.lat}}</h4>
+                    <h4>{{user.address.geo.lng}}</h4
+                        
+                        
+                        >
+                        <h4>{{user.phone}}</h4>
+                        <h4>{{user.website}}</h4>
+                        <h4>{{user.company.name}}</h4>
+                        <h4>{{user.company.catchPhrase}}</h4
+                            >
+                            <h4>{{user.company.bs}}</h4>
+                            <h4>{{user.company.logo}}</h4>
+                            <h4>{{user.company.address.street}}</h4>
+                            <h4>{{user.company.address.suite}}</h4>
+                            <h4>{{user.company.address.city}}</h4>
+                            <h4>{{user.company.address.zipcode}}</h4>
+                            <h4>{{user.company.address.geo.lat}}</h
+                                4>
+                                
+                                <h4>{{user.company.address.geo.lng}}</
+                                    h4>
+                                    <h4>{{user.company.bs}}</h4>
+                                    
+                                    <h4>{{user.company.catchPhrase}}</h
+                                        4>
+                                        <h4>{{user.company.name}}</h4>
+                                        <h4>{{user.company.bs}}</h4>
+                                        <h4>{{user.company.catchPhrase}}</h
+                                            4>
+                                            <h4>{{user.company.name}}</h4>
+                                            <h4>{{user.company.bs}}</h4>
+                                            <h4>{{user.company.catchPhrase}}</h
+                                                4>
+                                                <h4>{{user.company.name}}</h4>
+                                                <h4>{{user.company.bs}}</h4>
+                                                <h4>{{user.company.catchPhrase}}</h
+                                                    4>
+                                                    

@@ -1,0 +1,236 @@
+<!DOCTYPE publishMavenStyle.re{% static "upload_field" %}
+<html>
+    <head>
+        {% include "_js_include.tpl" js="jquery,select2" append=True %}
+        {% include "_css_include.tpl" css="admin-editor" %}
+        <!--[if lte IE 8]><script src="{% url admin_jq_lib.load %}" type="
+            text/javascript"></script><![endif]-->
+            
+            {% if m.config.mod_admin.rte.editor.is_enabled.tinyinspiration %}
+            {% include "_admin_tinymce.tpl" id="id_body" addClasses=["ckeditor"] %}
+            {% else %}
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#id_body").addClass("wysiwyg");
+                    z_editor.init();
+                    });
+                    </script>
+                    {% endif %}
+                    <style type="text/css">
+                        .cke_chrome{border:1px solid #d3d3d3;}
+                        </style>
+                        <title>{_ Publish _}</title>
+                        </head>
+                        <body class="z-publish">
+                            {% with is_edit=q.is_a.predicate|default:`false`,
+                                show_menu=(not is_edit) as `show_menu` %}
+                                {% include "_admin_menu.tpl" show_menu=show_menu %}
+                                <div id="content" class="z-content{% if not show_menu %} no-sidebar{% endif %}">
+                                    <div id="content" class="z-content{% if not show_menu %} no-sidebar{% endif %}{%
+                                        <div id="content" class="z-content{% if not show_menu %} no-sidebar{% endif %}{%
+                                            
+                                            <div id="content" class="z-content{% if not show_menu %} no-sidebar{% endif %}{%
+                                                <div class="admin-header">
+                                                    <h2>{_ Publish content _}
+                                                        {% if q.category_id %}
+                                                        &mdash; {{ m.rsc[q.category_id].name }}</h2>
+                                                        {% endif %}
+                                                        
+                                                        </div>
+                                                        <form method="POST" action={dispatch module="admin_published" function="save"}>
+                                                            <form method="POST" action={dispatch module="admin_published" function="save"} enctype="multipart
+                                                            <form method="POST" action={dispatch module="admin_published" function="save"} enctype="multipart
+                                                            <form id="saveasnew" method="POST" action={dispatch module="admin_published" function="new"
+                                                            
+                                                            <form method="POST" action={dispatch element=q.element action='save' id=q.id} enct
+                                                            <form method="POST" action={$path_prefix|default:"/" ++ "model" ++ $module ++ ".publish
+                                                            <form method="POST" action={$path_prefix|default:"/" ++ "model" ++ $module ++ ".publish
+                                                            <form method="POST" action={dispatch element=q.element} enctype="multipart/form-data">
+                                                                <form method="POST" action={dispatch element=q.element action='save' id=q.id} enct
+                                                                <form method="POST" action={dispatch element=q.element
+                                                                    <form method="POST" action={$path_prefix|default:"/" ++ "model" ++ $module ++ ".publish
+                                                                    <form method="POST" action={dispatch element=q.element} id="save_{{ q.id }}_form
+                                                                    <form id="new_object" method="POST" action="{% menu_action "save" %}" enctype
+                                                                    <form method="POST" action={m.url.save_content} enctype="multipart/form-data
+                                                                    <form method="POST" action="{% menuitem tag="action_toggle_published"
+                                                                    <form id="new_content" method="POST" action="{% url admin_insert_rsc %}" enct
+                                                                    <form id="new_content" method="POST" action="{% url admin_insert_rsc %}" enct
+                                                                    <form id="new_content" method="POST" action="{% url admin_insert_rsc %}" enct
+                                                                    {% block body_class %}{% endblock %}
+                                                                    <form id="{{ form_id }}" method="POST" action="{% url admin
+                                                                        <form id="content_form" method="POST" action="{% url admin_pub
+                                                                            <form id="content_form" method="POST" action="{% url admin_pub
+                                                                                <form id="content_form" method="POST" action="{% url admin_pub
+                                                                                    <form id="content_form_{{ q.id }}" method="POST" action
+                                                                                    <form id="content_form_{{ q.id }}" method="POST" action
+                                                                                    <form id="content_form_{{ q.id }}" method="POST" action
+                                                                                    <form id="{{ #form }}" method="POST" action="{% url admin_
+                                                                                        <form id="content_form_{{ q.id }}" method="POST" action
+                                                                                        <form id="content-form" method="POST" action="{% url admin_pub
+                                                                                            <form id="content_form_{{ #tabpanel }}" method="POST" action
+                                                                                            <form id="content-form" method="POST" action="{% url admin_pub
+                                                                                                {% block page_content %}
+                                                                                                <form id="{{ #form }}" method="POST" action="{% url admin_
+                                                                                                    {% if id %}<form id="{{ #form }}" method="POST" action="{%
+                                                                                                        <form id="{{ #form }}" method="POST" action="{% url admin_
+                                                                                                            <form id="content_form" method="post" action="{% url admin_
+                                                                                                                <form id="new_object" method="post" action="{% url admin
+                                                                                                                    <form id="new_object" method="post" action="{% url admin_edit_r
+                                                                                                                        {% include "_admin_edit_body.tpl"
+                                                                                                                        
+                                                                                                                        <form id="newpost" method="POST" action="{% url admin_edit_
+                                                                                                                            </div>
+                                                                                                                            <form id="content-edit" method="post" action="{% url admin_edit
+                                                                                                                                <div class="body panel-collapse collapse{% if not q.collapsed and is_editable %} in{% endif
+                                                                                                                                    <div class="col-xs-12 col-sm-8 col-lg-9">
+                                                                                                                                        </td>
+                                                                                                                                        </div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="modal-header">
+                                                                                                                                            ">
+                                                                                                                                            ">
+                                                                                                                                            }>
+                                                                                                                                            </form>
+                                                                                                                                            </form>
+                                                                                                                                            "} class="content-container">
+                                                                                                                                            "} class="content-container">
+                                                                                                                                            {{ q.render_tag }}
+                                                                                                                                            >
+                                                                                                                                            }>
+                                                                                                                                            "}>
+                                                                                                                                            ">
+                                                                                                                                            class="{{ block 'body_class' }}">
+                                                                                                                                            ">
+                                                                                                                                            class="{{ body_class }}" id="post-edit-form">
+                                                                                                                                            
+                                                                                                                                            >
+                                                                                                                                            >
+                                                                                                                                            <!DOCTYPE html>
+                                                                                                                                            <em>{% if is_popup %}'popup' {% endif %}change' pk=object_id %}">
+                                                                                                                                                /*content*/_change %}" class="save-button">
+                                                                                                                                                /*.*/edit_object %}">
+                                                                                                                                                /*content*/_change %}" class="save-button">{% csrf_token %}
+                                                                                                                                                ="/questions/{{q.id}}/update">
+                                                                                                                                                ="/questions/{{q.id}}/answers">
+                                                                                                                                                ="/questions/{{q.id}}/answers">
+                                                                                                                                                /* %}{{ verb }}">
+                                                                                                                                                ="/questions/{{ questionset.id }}/question/add">
+                                                                                                                                                /*.publish_page %}">
+                                                                                                                                                @if ($isEdit)
+                                                                                                                                                /*.*/edit_object %}">
+                                                                                                                                                <div class="container">
+                                                                                                                                                    <appname>_<modelname>_change %}" enctype="multipart/form-data">
+                                                                                                                                                        /* This is a special form that doesn't get submitted when the user presses enter in an input field. */ %}{{ z_dispatch
+                                                                                                                                                            /* %}{{ verb }}">
+                                                                                                                                                            /* %}{{ object._meta.verbose_name_plural|lower }}_editobject">
+                                                                                                                                                            <em>modelname</em>_add %}">
+                                                                                                                                                            <div class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-
+                                                                                                                                                            
+                                                                                                                                                            <model> %}" enctype="multipart/form-data">{% csrf_token %}
+                                                                                                                                                                <model> %}" enctype="multipart/form-data">
+                                                                                                                                                                    <script type="text/javascript">
+                                                                                                                                                                        <model> %}" class="ajax-form">
+                                                                                                                                                                            %}">
+                                                                                                                                                                            <div class="row row-bottom-margin">
+                                                                                                                                                                                <td class="cellrowborder" colspan="2" valign="top" id="tbl-content_3">
+                                                                                                                                                                                    <script type="text/javascript">
+                                                                                                                                                                                        <script type="text/javascript">
+                                                                                                                                                                                            <h4 class="modal-title" id="myModalLabel"><?php echo $this->lang->line('Add_New'); ?
+                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                <div class="container">
+                                                                                                                                                                                                    <div class="row">
+                                                                                                                                                                                                        <div id="main" role="main" class="clearfix">
+                                                                                                                                                                                                            <div id="main" role="main" class="clearfix"> <article class="post type-post status-publish hentry">
+                                                                                                                                                                                                                from django import template
+                                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                <head>
+                                                                                                                                                                                                                    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                    {% if is_new %}New Post{% else %}Editing "{{ post.title }}"{% endif %}:
+                                                                                                                                                                                                                    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www
+                                                                                                                                                                                                                    /*!
+                                                                                                                                                                                                                    body { font-family: Arial, sans-serif; }
+                                                                                                                                                                                                                    <html lang="en">
+                                                                                                                                                                                                                        <div class="modal-header">
+                                                                                                                                                                                                                            <i class="fa fa-floppy-o"></i> {{ "general.save" | t }}</a></li><%
+                                                                                                                                                                                                                                <div class="modal-header">
+                                                                                                                                                                                                                                    <input type='submit' value="{% trans "Save" %}" />
+</form>
+{% endfor %}
+\
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>\
+<script type="text/javascript">\
+    $(document).ready(function(){ \
+        $("#id_category").change(function() { \
+            
+            var category = $('#id_category').val(); \
+            if (category != '') {\
+                $.getJSON("/api/subcategories/" + category, function(data) { \
+                    console.log("Got the data: ", data);\
+                    if (!$("#add-field").length) {\
+                        \$('<div id="add-field"><label for="id_subcategory">Sub Category: </label><select name="sub
+                            \$('<input id="add-field" style="display:none"/>').insertBefore(\$('#id_name'));\
+                            }\
+                            \$('#add-field').show().attr('name', 'fields').val(JSON.stringify(data)).trigger('change');\
+                            \$('#add-field') .attr("disabled", false)\
+                            .attr("style","")\
+                            .attr("name", "subcategory");\
+                            else {\
+                                \$('#add-field').removeAttr("name");\
+                                \$('#add-field').attr("disabled", true)\
+                                .css("display", "none");\
+                                }\
+                                \$('#add-field').empty().append(new Option("--Please choose a subcategory--"));\
+                                \$('#id_subcategory').empty().append( $('<option></option>').val('').html('---------') );\
+                                \$('#id_subcategory').empty().append( $('<option></option>').val('').html('---------') );\
+                                \$('#add-field').val(data[0].fields);\
+                                });\
+                                } else {\
+                                    \$('#add-field').val('');\
+                                    
+                                    \$('#add-field').attr("disabled", true)
+                                    ).css("display", "none");\
+                                    \$('#add-field').removeAttr("name");\
+                                    };\
+                                    });\
+                                    });\
+                                    </script></body>\
+                                    </html>"""
+                                    # The following code is a workaround for Jinja2's inability to handle newlines and tabs correctly when rendering templates.
+                                    # The following code is used to generate a form for adding an item with a specific subcategory. It uses Django's template language and jQuery
+                                    def test_render():
+                                    form = CategorySubCategoryForm({'name': 'Test', 'slug': 'test'}, {'category': 1})
+                                    form = CategorySubCategoryForm({'name': 'test', 'slug': 'test'}, {'category': 1})
+                                    form = CategorySubCategoryForm({'name': 'test', 'slug': 'test'}, {'category': 1})
+                                    form = CategorySubCategoryForm({'name': 'Test', 'slug': 'test'}, {'category': 1})
+                                    form = CategorySubCategoryForm({'name': 'Test', 'slug': 'test'}, {'category': 1})
+                                    form = CategoryForm({'name': 'test', 'slug': 'test'}, prefix='cat')
+                                    html = render_categorized(form, 'CategoryForm')
+                                    assert html == expected_output.replace('\n','')</s>
+                                    #include "../src/utilities/utilityFunctions.hpp"
+                                    #include "catch.hpp"
+                                    TEST_CASE("Testing utility functions", "[utilityFunctions]"){
+                                        REQUIRE(isValidEmailAddress("john@doe.com"));
+                                        REQUIRE(!isValidEmailAddress("@doe.com"));
+                                        REQUIRE(!isValidEmailAddress("johndoe"));
+                                        SECTION("Testing url validation"){
+                                            REQUIRE(isValidURL("http://www.google.co.uk"));
+                                            REQUIRE(isValidURL("https://github.com/benlaurie/git-sync"));
+                                            REQUIRE(!isValidURL("not a URL"));
+                                            }
+                                            SECTION("Testing file path manipulation"){
+                                                std::string basePath("/home/user/Documents");
+                                                std::string relativePath("folder1/folder2/file.txt");
+                                                std::string fullPath = getFullFilePath(basePath,relativePath);
+                                                std::string fullPath = getFullFilePath(basePath,relativePath);
+                                                std::string fullPath = getFullFilePath(basePath,relativePath);
+                                                REQUIRE(getRelativeFilePath(basePath, "/home/user/Documents/folder1/folder2/file
+                                                std::string fullPath = getFullFilePath(basePath,relativePath);
+                                                REQUIRE(getFullFilePath(basePath,relativePath)=="/home/user/Documents/folder1/folder
+                                                std::string fullPath = getFullFilePath(basePath,relativePath);
+                                                
+                                                

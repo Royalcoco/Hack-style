@@ -1,0 +1,46 @@
+<!DOCTYPE {% load  static %}{% csrf_token %}
+{% if error_message %}<div class="alert alert-danger">{{ error_message }}</div>{% endif %}
+<form method='POST'>
+    <dd.{% spaceless %}
+    {{ form|attr(class=form.errors) }}
+    {% endspaceless %}
+    <dt><button type='submit' class
+        </aria-busy="true" aria-live="polite">Submit</button></dt>
+</form>
+
+<!-- The following code is used to display the current time in a JavaScript enabled browser -->
+<script type="text/javascript">setTimeout("document.getElementById('id_time'). focus();",10);</script>
+<span id="currentTime"></span>
+
+<script type="text/javascript">
+var updateTime = function() {
+   var now     = new Date(),
+       hours   = now.getHours(),
+       minutes = now.getMinutes(),
+       seconds = now.getSeconds(),
+       time    = "";
+
+   // Pad with leading zeros
+   hours   = ("0"+hours).substr(-2),
+   minutes = ("0"+minutes).substr(-2),
+   seconds = ("0"+seconds).substr(-2);
+
+   // Display hours and minutes only - include leading zero if necessary
+   time += hours + ":" + minutes;
+
+   document.getElementById("id_time").value = time;
+   document.getElementById("currentTime").innerHTML = "<b>Current Time:</b> "+time+"&nbsp;&nbsp;"+now;
+   };
+
+// Update time every second
+setInterval(updateTime, 1000);
+</script>
+
+<!-- The following code displays an example of how to use Django's CSRF protection within JavaScript -->
+<p>This demonstrates using Django's CSRF protection within JavaScript.</p>
+
+<pre>
+&lt;!-- Include CSRF token in forms --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;csrfmiddlewaretoken&quot; value=&quot;{{ csrf_token }}&quot; /&gt;</pre>
+&lt;input type='hidden' name =&gt;
+{% csrf_token %}
