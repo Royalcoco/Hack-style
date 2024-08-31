@@ -1,0 +1,73 @@
+import socket
+from cryptography.fernet import Fernet
+import os
+import subprocess
+
+# Génération et stockage de la clé de chiffrement
+def generate_key():
+    key = Fernet.generate_key()
+    with open("firewall.key", "wb") as key_file:
+        key_file.write(key)
+
+# Chargement de la clé
+def load_key():
+    return open("firewall.key", "rb").read()
+
+# Chiffrement et déchiffrement des données
+def encrypt_message(message):
+    key = load_key()
+    f = Fernet(key)
+    return f.encrypt(message.encode())
+
+def decrypt_message(encrypted_message):
+    key = load_key()
+    f = Fernet(key)
+    return f.decrypt(encrypted_message).decode()
+
+# Matrice de règles
+M = [
+    [1, 0, 0, 1],
+    [0, 1, 1, 0],
+    [1, 0, 1, 0],
+    [0, 1, 0, 1]
+]
+
+# Fonction pour vérifier si une adresse IP est autorisée
+def check_ip(ip_address):
+    octets = list(map(int, ip_address.split('.')))
+    for i in range(4):
+        if M[i][0] == 1 and octets[i] != M[i][3]:
+            return False
+    return True
+
+# Serveur Pare-feu avec chiffrement
+def firewall_server(host='0.0.0.0', port=8080):
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((host, port))
+    server_socket.listen(5)
+    print(f"Pare-feu actif sur {host}:{port}")
+
+    while True:
+        client_socket, addr = server_socket.accept()
+        print(f"Connexion de {addr[0]}:{addr[1]}")
+        
+        if check_ip(addr[0]):
+            print(f"Connexion autorisée de {addr[0]}")
+            encrypted_message = encrypt_message("Connexion autorisée")
+            client_socket.send(encrypted_message)
+        else:
+            print(f"Connexion bloquée de {addr[0]}")
+            encrypted_message = encrypt_message("Connexion bloquée")
+            client_socket.send(encrypted_message)
+            client_socket.close()
+
+# Commande pour installer le pare-feu
+def install_firewall():
+    print("Installation du pare-feu...")
+    generate_key()
+    # Vous pouvez ajouter des étapes supplémentaires ici pour configurer le pare-feu sur le système
+    subprocess.run(["echo", "Installation terminée !"])
+
+if __name__ == "__main__":
+    install_firewall()
+    firewall_server()
