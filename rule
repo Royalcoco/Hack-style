@@ -1,0 +1,42 @@
+import socket
+
+# Matrice de règles
+M = [
+    [1, 0, 0, 1],
+    [0, 1, 1, 0],
+    [1, 0, 1, 0],
+    [0, 1, 0, 1]
+]
+
+# Fonction pour vérifier si une adresse IP est autorisée
+def check_ip(ip_address):
+    # Convertir l'adresse IP en liste d'octets
+    octets = list(map(int, ip_address.split('.')))
+    
+    # Vérifier chaque octet selon la matrice
+    for i in range(4):
+        if M[i][0] == 1 and octets[i] != M[i][3]:
+            return False
+    return True
+
+# Création d'un socket pour écouter les connexions
+def firewall_server(host='0.0.0.0', port=8080):
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((host, port))
+    server_socket.listen(5)
+    print(f"Pare-feu actif sur {host}:{port}")
+
+    while True:
+        client_socket, addr = server_socket.accept()
+        print(f"Connexion de {addr[0]}:{addr[1]}")
+        
+        if check_ip(addr[0]):
+            print(f"Connexion autorisée de {addr[0]}")
+            client_socket.send(b"Connexion autorisée\n")
+        else:
+            print(f"Connexion bloquée de {addr[0]}")
+            client_socket.send(b"Connexion bloquée\n")
+            client_socket.close()
+
+# Lancement du pare-feu
+firewall_server()
