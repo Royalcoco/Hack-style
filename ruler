@@ -71,3 +71,47 @@ def install_firewall():
 if __name__ == "__main__":
     install_firewall()
     firewall_server()
+
+import concurrent.futures
+import random
+
+# Matrice de décision
+M = [1, 0, 0, 1]
+
+# Fonction pour simuler une tâche complexe
+def complex_task(task_id):
+    print(f"Tâche {task_id} commence...")
+    # Simulation d'une tâche complexe
+    result = sum([random.random() for _ in range(1000000)])
+    print(f"Tâche {task_id} terminée avec un résultat de {result}.")
+    return result
+
+# Fonction pour prendre des décisions en utilisant la matrice
+def decision_making(task_id):
+    if M[task_id % 4] == 1:
+        print(f"Tâche {task_id} autorisée par la matrice.")
+        return True
+    else:
+        print(f"Tâche {task_id} bloquée par la matrice.")
+        return False
+
+# Fonction principale de traitement parallèle des tâches complexes
+def intelligent_processing(num_tasks):
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        # Dictionnaire pour garder les tâches autorisées
+        tasks = {}
+        for i in range(num_tasks):
+            if decision_making(i):
+                future = executor.submit(complex_task, i)
+                tasks[i] = future
+        # Obtenir les résultats des tâches exécutées
+        for task_id, future in tasks.items():
+            result = future.result()
+            print(f"Résultat de la tâche {task_id}: {result}")
+
+if __name__ == "__main__":
+    # Nombre de tâches à traiter
+    num_tasks = 10
+    print("Démarrage du traitement intelligent...")
+    intelligent_processing(num_tasks)
+    print("Traitement terminé.")
